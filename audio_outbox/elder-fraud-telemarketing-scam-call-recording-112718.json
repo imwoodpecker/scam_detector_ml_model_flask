@@ -1,0 +1,342 @@
+{
+  "risk_score": 100.0,
+  "risk_level": "CRITICAL",
+  "flags": [
+    "AUTHORITY_IMPERSONATION",
+    "CREDENTIAL_HARVESTING",
+    "CREDENTIAL_OTP",
+    "FALSE_POSITIVE_SUPPRESSION"
+  ],
+  "summary": "Caller requested sensitive financial credentials (codes/card/account details). Caller appears to impersonate a bank, card network, or fraud/security department. Transcript matches known scam script patterns. Final risk: high (100/100).",
+  "transcript": {
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.0,
+        "speaker": "SPEAKER_1",
+        "text": "Hello"
+      },
+      {
+        "start": 2.3000000000000003,
+        "end": 4.3,
+        "speaker": "SPEAKER_1",
+        "text": "Yeah, this is Lewis"
+      },
+      {
+        "start": 4.3,
+        "end": 8.08,
+        "speaker": "SPEAKER_1",
+        "text": "This is Sammy Daniel calling you from off-coast fraud watch divisions"
+      },
+      {
+        "start": 8.08,
+        "end": 13.22,
+        "speaker": "SPEAKER_1",
+        "text": "You're in the security of your visa mastercard accounts due to the increase in computer related frauds"
+      },
+      {
+        "start": 13.22,
+        "end": 17.92,
+        "speaker": "SPEAKER_1",
+        "text": "We've made some very important changes for our policies, and I just want to beat you on the changes"
+      },
+      {
+        "start": 18.400000000000002,
+        "end": 20.400000000000002,
+        "speaker": "SPEAKER_1",
+        "text": "Okay, all right. Oh one second"
+      },
+      {
+        "start": 21.240000000000002,
+        "end": 27.0,
+        "speaker": "SPEAKER_2",
+        "text": "Standard procedure that we're telling all the customers that now that because of computer related frauds"
+      },
+      {
+        "start": 27.4,
+        "end": 31.88,
+        "speaker": "SPEAKER_2",
+        "text": "Called the card holders are held responsible to the mastercard and visa"
+      },
+      {
+        "start": 32.4,
+        "end": 36.96,
+        "speaker": "SPEAKER_2",
+        "text": "So right now what we're doing is we're providing protection. So right now we underwrite everything"
+      },
+      {
+        "start": 36.96,
+        "end": 40.88,
+        "speaker": "SPEAKER_2",
+        "text": "That's any extra fraud charge on your credit card. We underwrite it right away"
+      },
+      {
+        "start": 40.88,
+        "end": 45.879999999999995,
+        "speaker": "SPEAKER_2",
+        "text": "You'll also be receiving a package in about seven to ten days. Oh, okay via UPS"
+      },
+      {
+        "start": 45.879999999999995,
+        "end": 51.260000000000005,
+        "speaker": "SPEAKER_2",
+        "text": "Yeah, and in this package you'll find stickers and also a registration form on this registration form"
+      },
+      {
+        "start": 51.400000000000006,
+        "end": 53.400000000000006,
+        "speaker": "SPEAKER_2",
+        "text": "You write down all your account numbers"
+      },
+      {
+        "start": 54.28,
+        "end": 58.32,
+        "speaker": "SPEAKER_1",
+        "text": "Telephone cards the department store cards any other cards, okay that you have a console"
+      },
+      {
+        "start": 58.32,
+        "end": 63.32,
+        "speaker": "SPEAKER_1",
+        "text": "Oh, yeah, that we can protect all of them now today. I will be giving you a new security code"
+      },
+      {
+        "start": 63.64,
+        "end": 67.03999999999999,
+        "speaker": "SPEAKER_1",
+        "text": "Okay, all right now in order for me to give you a security code"
+      },
+      {
+        "start": 67.03999999999999,
+        "end": 71.0,
+        "speaker": "SPEAKER_1",
+        "text": "I just need to ensure that you are the right, you know authorized card holder"
+      },
+      {
+        "start": 71.0,
+        "end": 77.08,
+        "speaker": "SPEAKER_1",
+        "text": "So if you can just confirm your card with me, okay, all right, which card are you gonna be using your visa your mastercard?"
+      }
+    ],
+    "speaker_summaries": {
+      "SPEAKER_1": "Hello Yeah, this is Lewis This is Sammy Daniel calling you from off-coast fraud watch divisions You're in the security of your visa mastercard accounts due to the increase in computer related frauds We've made some very important changes for our policies, and I just want to beat you on the changes Okay, all right. Oh one second Telephone cards the department store cards any other cards, okay that you have a console Oh, yeah, that we can protect all of them now today. I will be giving you a new security code Okay, all right now in order for me to give you a security code I just need to ensure that you are the right, you know authorized card holder So if you can just confirm your card with me, okay, all right, which card are you gonna be using your visa your mastercard?",
+      "SPEAKER_2": "Standard procedure that we're telling all the customers that now that because of computer related frauds Called the card holders are held responsible to the mastercard and visa So right now what we're doing is we're providing protection. So right now we underwrite everything That's any extra fraud charge on your credit card. We underwrite it right away You'll also be receiving a package in about seven to ten days. Oh, okay via UPS Yeah, and in this package you'll find stickers and also a registration form on this registration form You write down all your account numbers"
+    }
+  },
+  "details": {
+    "features": {
+      "urgency_phrase_count": 0,
+      "otp_credential_mentions": 2,
+      "money_payment_mentions": 0,
+      "authority_impersonation_signals": 7,
+      "off_platform_mentions": 0,
+      "secrecy_mentions": 0,
+      "credential_harvest_signals": 6,
+      "action_request_mentions": 3,
+      "financial_account_mentions": 2,
+      "known_scam_script_hits": 3,
+      "caller_dominance_ratio_speaker1": 0.5751366120218578,
+      "known_scam_phrase_hits": [
+        "card holders are held responsible",
+        "due to increase in computer related fraud",
+        "we underwrite all fraud charges"
+      ],
+      "transcript_text": "Hello Yeah, this is Lewis This is Sammy Daniel calling you from off-coast fraud watch divisions You're in the security of your visa mastercard accounts due to the increase in computer related frauds We've made some very important changes for our policies, and I just want to beat you on the changes Okay, all right. Oh one second Standard procedure that we're telling all the customers that now that because of computer related frauds Called the card holders are held responsible to the mastercard and visa So right now what we're doing is we're providing protection. So right now we underwrite everything That's any extra fraud charge on your credit card. We underwrite it right away You'll also be receiving a package in about seven to ten days. Oh, okay via UPS Yeah, and in this package you'll find stickers and also a registration form on this registration form You write down all your account numbers Telephone cards the department store cards any other cards, okay that you have a console Oh, yeah, that we can protect all of them now today. I will be giving you a new security code Okay, all right now in order for me to give you a security code I just need to ensure that you are the right, you know authorized card holder So if you can just confirm your card with me, okay, all right, which card are you gonna be using your visa your mastercard?"
+    },
+    "final_report": {
+      "risk_score": 100,
+      "risk_level": "high",
+      "signals": [
+        "AUTHORITY_IMPERSONATION",
+        "CREDENTIAL_HARVESTING",
+        "CREDENTIAL_OTP",
+        "FALSE_POSITIVE_SUPPRESSION"
+      ],
+      "trace": [
+        {
+          "chunk_index": 3,
+          "change": 11,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 11
+        },
+        {
+          "chunk_index": 4,
+          "change": 8,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 8
+        },
+        {
+          "chunk_index": 5,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 6,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 7,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 8,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 9,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 10,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 11,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 12,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 13,
+          "change": 21,
+          "rule_id": "CREDENTIAL_HARVESTING",
+          "why": "Requests for card/account numbers are high-risk credential harvesting.",
+          "contributed": 21
+        },
+        {
+          "chunk_index": 13,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 14,
+          "change": 16,
+          "rule_id": "CREDENTIAL_HARVESTING",
+          "why": "Requests for card/account numbers are high-risk credential harvesting.",
+          "contributed": 16
+        },
+        {
+          "chunk_index": 14,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 15,
+          "change": 21,
+          "rule_id": "CREDENTIAL_OTP",
+          "why": "OTP/credential solicitation is a high-confidence scam intent.",
+          "contributed": 21
+        },
+        {
+          "chunk_index": 15,
+          "change": 3,
+          "rule_id": "CREDENTIAL_HARVESTING",
+          "why": "Requests for card/account numbers are high-risk credential harvesting.",
+          "contributed": 3
+        },
+        {
+          "chunk_index": 15,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 16,
+          "change": 16,
+          "rule_id": "CREDENTIAL_OTP",
+          "why": "OTP/credential solicitation is a high-confidence scam intent.",
+          "contributed": 16
+        },
+        {
+          "chunk_index": 16,
+          "change": 3,
+          "rule_id": "CREDENTIAL_HARVESTING",
+          "why": "Requests for card/account numbers are high-risk credential harvesting.",
+          "contributed": 3
+        },
+        {
+          "chunk_index": 16,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 17,
+          "change": 3,
+          "rule_id": "CREDENTIAL_OTP",
+          "why": "OTP/credential solicitation is a high-confidence scam intent.",
+          "contributed": 3
+        },
+        {
+          "chunk_index": 17,
+          "change": 3,
+          "rule_id": "CREDENTIAL_HARVESTING",
+          "why": "Requests for card/account numbers are high-risk credential harvesting.",
+          "contributed": 3
+        },
+        {
+          "chunk_index": 17,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        },
+        {
+          "chunk_index": 18,
+          "change": 3,
+          "rule_id": "CREDENTIAL_OTP",
+          "why": "OTP/credential solicitation is a high-confidence scam intent.",
+          "contributed": 3
+        },
+        {
+          "chunk_index": 18,
+          "change": 3,
+          "rule_id": "CREDENTIAL_HARVESTING",
+          "why": "Requests for card/account numbers are high-risk credential harvesting.",
+          "contributed": 3
+        },
+        {
+          "chunk_index": 18,
+          "change": 2,
+          "rule_id": "AUTHORITY_IMPERSONATION",
+          "why": "Authority/support impersonation elevates risk.",
+          "contributed": 2
+        }
+      ]
+    }
+  }
+}
