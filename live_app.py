@@ -1,105 +1,56 @@
 """
 live_app.py
 
-PC runner that simulates the full production pipeline:
-stdin (simulated STT chunks) -> streaming scam engine -> live HUD popup -> final YAML report
-
-Why stdin?
-- Microphone capture + offline STT engines are platform-specific and often require native deps.
-- This keeps the intelligence engine + HUD logic testable and deterministic on any PC.
+Live application for real-time scam detection.
 """
 
 from __future__ import annotations
 
 import argparse
+import json
 import sys
-import threading
-from queue import Queue
+from dataclasses import asdict
 
-from audio_listener import TextChunkSource
 from scorer import StreamingScorer
-from stt_rules import assess_stt_quality
 
-try:
-    # Optional; only used when --hud is enabled.
-    from hud import HudController, HudState
-    from hud_messages import pick_reason
-except Exception:  # pragma: no cover
-    HudController = None  # type: ignore[assignment]
-    HudState = None  # type: ignore[assignment]
-    pick_reason = None  # type: ignore[assignment]
-
-
-def _parse_args(argv: list[str] | None = None) -> argparse.Namespace:
-    p = argparse.ArgumentParser(description="Live runner (PC): stdin -> streaming engine (+ optional HUD) -> final YAML.")
-    p.add_argument(
-        "--hud",
-        action="store_true",
-        help="Enable the non-intrusive desktop HUD popup. Disabled by default.",
-    )
-    return p.parse_args(argv)
-
-
-def run(argv: list[str] | None = None) -> int:
-    args = _parse_args(argv)
-    scorer = StreamingScorer(session_id="pc")
-    hud = None
-    q: Queue = Queue()
-    if args.hud:
-        if HudController is None:
-            raise SystemExit("HUD requested but tkinter HUD is unavailable in this environment.")
-        hud = HudController()
-        hud.poll_queue(q)  # type: ignore[arg-type]
-
-    source = TextChunkSource(chunk_ms=2000)
-
-    def worker() -> None:
-        # Feed chunks from stdin; enqueue HUD updates after each chunk.
-        for chunk in source.iter_chunks_from_lines(sys.stdin):
-            sttq = assess_stt_quality(chunk.text)
-
-            snap = scorer.ingest_chunk(chunk.text)
-            if sttq.tier in ("low", "partial"):
-                # Soft dampening for unclear text; deterministic and traceable.
-                scorer.ingest_chunk("reference number")
-                snap = scorer.ingest_chunk("")
-
-            if hud is not None:
-                reason = pick_reason(snap.newly_detected_signals, snap.risk_level)  # type: ignore[misc]
-                q.put(HudState(risk_score=snap.risk_score, risk_level=snap.risk_level, reason=reason))  # type: ignore[misc]
-
-            # Console snapshot (YAML-ish)
-            print(f"- chunk: {snap.chunk_index}")
-            print(f"  risk_score: {snap.risk_score}")
-            print(f"  risk_level: {snap.risk_level}")
-            print(f"  newly_detected_signals: {snap.newly_detected_signals or []}")
-            if sttq.reasons:
-                print(f"  stt_quality: {sttq.tier}")
-                print(f"  stt_reasons: {sttq.reasons}")
-
+def main() -> None:
+    """Run live scam detection application."""
+    parser = argparse.ArgumentParser(description="Live scam detection from stdin")
+    parser.add_argument("--session", default="default", help="Session ID")
+    args = parser.parse_args()
+    
+    scorer = StreamingScorer(session_id=args.session)
+    
+    print("Live scam detection started. Type text and press Enter.")
+    print("Type 'quit' to exit.")
+    
+    try:
+        while True:
+            try:
+                text = input("> ")
+                if text.lower() in ['quit', 'exit', 'q']:
+                    break
+                
+                if not text.strip():
+                    continue
+                
+                snapshot = scorer.ingest_chunk(text)
+                result = asdict(snapshot)
+                print(json.dumps(result, ensure_ascii=False, indent=2))
+                
+            except KeyboardInterrupt:
+                break
+            except EOFError:
+                break
+    
+    finally:
         final = scorer.finalize()
-        print("final_report:")
-        print(f"  risk_score: {final.risk_score}")
-        print(f"  risk_level: {final.risk_level}")
-        print("  signals:")
-        for s in final.signals:
-            print(f"    - {s}")
-        print("  explanation:")
-        for t in final.trace:
-            print(f"    - chunk {t.chunk_index}: {t.rule_id} {t.change:+d} ({t.why})")
-        print("  audit_notes:")
-        print("    - No audio/text leaves the device. All decisions are deterministic and traceable.")
+        print("\nFinal assessment:")
+        print(json.dumps(asdict(final), ensure_ascii=False, indent=2))
 
-    t = threading.Thread(target=worker, daemon=True)
-    t.start()
-    if hud is not None:
-        hud.loop()
-    else:
-        # Console-only mode: wait until input completes.
-        t.join()
-    return 0
+def run() -> None:
+    """Run live application."""
+    main()
 
-
-if __name__ == "__main__":
-    raise SystemExit(run())
-
+if __name__ == '__main__':
+    main()

@@ -1,0 +1,868 @@
+{
+  "risk_score": 10,
+  "risk_level": "LOW",
+  "transcript_quality": {
+    "quality_score": 0.9413881748071979,
+    "quality_level": "HIGH",
+    "is_sufficient_for_scoring": true,
+    "explanation": "Transcript appears coherent",
+    "metrics": {
+      "token_count": 389,
+      "segment_count": 129,
+      "avg_segment_duration": 1.823100775193798,
+      "short_token_ratio": 0.16452442159383032,
+      "has_meaningful_content": true,
+      "repetition_score": 0.1953727506426735,
+      "gibberish_score": 0.0
+    },
+    "recommendation": "PROCEED"
+  },
+  "audio_quality": {
+    "original": {
+      "duration_seconds": 547.0389375,
+      "silence_percentage": 41.77867594662766,
+      "snr_estimate_db": 45.93479919433594,
+      "sample_rate": 16000
+    },
+    "processed": {
+      "duration_seconds": 547.0389375,
+      "silence_percentage": 46.39416092752995,
+      "snr_estimate_db": 49.251638746306725,
+      "sample_rate": 16000
+    },
+    "preprocessing_applied": [
+      "high_pass_filter",
+      "noise_reduction",
+      "loudness_normalization"
+    ]
+  },
+  "stt_backend": {
+    "backend": "faster_whisper",
+    "model": "tiny",
+    "language": "hi",
+    "language_probability": 1.0
+  },
+  "flags": [
+    "CONTAINS_PHONE",
+    "FALSE_POSITIVE_SUPPRESSION"
+  ],
+  "summary": "No strong scam intent indicators detected from transcript. Final risk: minimal (17/100).",
+  "language": {
+    "detected": "hi",
+    "detected_name": "Hindi",
+    "supported": true,
+    "confidence": 1.0
+  },
+  "transcript": {
+    "segments": [
+      {
+        "start": 0.59,
+        "end": 2.59,
+        "speaker": "SPEAKER_1",
+        "text": "Hello. Hello."
+      },
+      {
+        "start": 2.59,
+        "end": 3.59,
+        "speaker": "SPEAKER_1",
+        "text": "Namaste Vali."
+      },
+      {
+        "start": 3.59,
+        "end": 5.59,
+        "speaker": "SPEAKER_1",
+        "text": "Yes, Namaste Vali."
+      },
+      {
+        "start": 5.59,
+        "end": 6.59,
+        "speaker": "SPEAKER_1",
+        "text": "And how are you?"
+      },
+      {
+        "start": 6.59,
+        "end": 8.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am from K."
+      },
+      {
+        "start": 8.59,
+        "end": 10.59,
+        "speaker": "SPEAKER_1",
+        "text": "What are you doing?"
+      },
+      {
+        "start": 10.59,
+        "end": 11.59,
+        "speaker": "SPEAKER_1",
+        "text": "What are you doing?"
+      },
+      {
+        "start": 11.59,
+        "end": 13.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am coming."
+      },
+      {
+        "start": 13.59,
+        "end": 14.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 14.59,
+        "end": 15.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am coming."
+      },
+      {
+        "start": 15.59,
+        "end": 16.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am coming."
+      },
+      {
+        "start": 16.59,
+        "end": 17.59,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 17.59,
+        "end": 18.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am coming."
+      },
+      {
+        "start": 18.59,
+        "end": 20.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am not going to call you."
+      },
+      {
+        "start": 20.59,
+        "end": 21.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 21.59,
+        "end": 22.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 22.59,
+        "end": 23.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 23.59,
+        "end": 24.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay. Let's go."
+      },
+      {
+        "start": 24.59,
+        "end": 25.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 25.59,
+        "end": 26.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 26.59,
+        "end": 27.59,
+        "speaker": "SPEAKER_1",
+        "text": "You are coming."
+      },
+      {
+        "start": 27.59,
+        "end": 28.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 28.59,
+        "end": 29.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 29.59,
+        "end": 30.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 30.59,
+        "end": 31.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 31.59,
+        "end": 32.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 32.59,
+        "end": 33.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 33.59,
+        "end": 34.59,
+        "speaker": "SPEAKER_1",
+        "text": "Very good."
+      },
+      {
+        "start": 34.59,
+        "end": 36.59,
+        "speaker": "SPEAKER_1",
+        "text": "Very good."
+      },
+      {
+        "start": 36.59,
+        "end": 37.59,
+        "speaker": "SPEAKER_1",
+        "text": "Very good."
+      },
+      {
+        "start": 37.59,
+        "end": 39.59,
+        "speaker": "SPEAKER_1",
+        "text": "Very good."
+      },
+      {
+        "start": 39.59,
+        "end": 41.59,
+        "speaker": "SPEAKER_1",
+        "text": "No, we are not going to call you."
+      },
+      {
+        "start": 41.59,
+        "end": 43.59,
+        "speaker": "SPEAKER_1",
+        "text": "So, you are coming."
+      },
+      {
+        "start": 43.59,
+        "end": 45.59,
+        "speaker": "SPEAKER_1",
+        "text": "And we are coming."
+      },
+      {
+        "start": 45.59,
+        "end": 46.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 46.59,
+        "end": 47.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 47.59,
+        "end": 48.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am going to call you."
+      },
+      {
+        "start": 48.59,
+        "end": 49.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 49.59,
+        "end": 50.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 50.59,
+        "end": 51.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 51.59,
+        "end": 52.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 52.59,
+        "end": 53.59,
+        "speaker": "SPEAKER_1",
+        "text": "Stop."
+      },
+      {
+        "start": 53.59,
+        "end": 54.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 54.59,
+        "end": 55.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 55.59,
+        "end": 56.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 56.59,
+        "end": 57.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am going to call you."
+      },
+      {
+        "start": 57.59,
+        "end": 59.59,
+        "speaker": "SPEAKER_1",
+        "text": "So, we are going to call you."
+      },
+      {
+        "start": 59.59,
+        "end": 60.59,
+        "speaker": "SPEAKER_1",
+        "text": "I am going to call you."
+      },
+      {
+        "start": 60.59,
+        "end": 61.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 61.59,
+        "end": 62.59,
+        "speaker": "SPEAKER_1",
+        "text": "I will call you."
+      },
+      {
+        "start": 62.59,
+        "end": 63.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 63.59,
+        "end": 64.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 64.59,
+        "end": 65.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 65.59,
+        "end": 66.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 66.59,
+        "end": 67.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 67.59,
+        "end": 68.59,
+        "speaker": "SPEAKER_1",
+        "text": "Good."
+      },
+      {
+        "start": 68.59,
+        "end": 70.59,
+        "speaker": "SPEAKER_1",
+        "text": "Good."
+      },
+      {
+        "start": 70.59,
+        "end": 71.59,
+        "speaker": "SPEAKER_1",
+        "text": "How are you going?"
+      },
+      {
+        "start": 71.59,
+        "end": 72.59,
+        "speaker": "SPEAKER_1",
+        "text": "I don't know."
+      },
+      {
+        "start": 72.59,
+        "end": 73.59,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 73.59,
+        "end": 74.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 74.59,
+        "end": 75.63,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 76.59,
+        "end": 78.59,
+        "speaker": "SPEAKER_2",
+        "text": "Okay."
+      },
+      {
+        "start": 78.59,
+        "end": 79.59,
+        "speaker": "SPEAKER_2",
+        "text": "Okay."
+      },
+      {
+        "start": 79.59,
+        "end": 80.59,
+        "speaker": "SPEAKER_2",
+        "text": "Okay."
+      },
+      {
+        "start": 81.59,
+        "end": 82.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 82.59,
+        "end": 83.59,
+        "speaker": "SPEAKER_1",
+        "text": "Come."
+      },
+      {
+        "start": 83.59,
+        "end": 84.59,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 174.59,
+        "end": 183.86,
+        "speaker": "SPEAKER_2",
+        "text": "जाजनी इाजिन क्याते हैहु तलनी इसका फृजे कराति है."
+      },
+      {
+        "start": 183.86,
+        "end": 188.8,
+        "speaker": "SPEAKER_2",
+        "text": "बहीं ही इसका नहीं क्याme करती इसकी इसरें डिने चाजीने इसकी इसका हैबनी करा अऩह hook जाबीं जरीट सकते नहती पनाती है है।"
+      },
+      {
+        "start": 341.3,
+        "end": 344.76,
+        "speaker": "SPEAKER_1",
+        "text": "I am not coming from the point of view."
+      },
+      {
+        "start": 345.56,
+        "end": 347.62,
+        "speaker": "SPEAKER_2",
+        "text": "No, it's not like you are not coming from the point of view."
+      },
+      {
+        "start": 348.02,
+        "end": 350.38,
+        "speaker": "SPEAKER_2",
+        "text": "No, it's like you are coming from the point of view."
+      },
+      {
+        "start": 350.86,
+        "end": 351.6,
+        "speaker": "SPEAKER_2",
+        "text": "Okay."
+      },
+      {
+        "start": 352.48,
+        "end": 354.32,
+        "speaker": "SPEAKER_1",
+        "text": "I am telling you the truth."
+      },
+      {
+        "start": 361.31,
+        "end": 361.87,
+        "speaker": "SPEAKER_2",
+        "text": "What?"
+      },
+      {
+        "start": 362.23,
+        "end": 363.21,
+        "speaker": "SPEAKER_2",
+        "text": "I am saying that."
+      },
+      {
+        "start": 363.95,
+        "end": 364.67,
+        "speaker": "SPEAKER_2",
+        "text": "Yes, I am saying that."
+      },
+      {
+        "start": 364.67,
+        "end": 366.29,
+        "speaker": "SPEAKER_2",
+        "text": "I am saying that it's not a symbol."
+      },
+      {
+        "start": 366.61,
+        "end": 368.37,
+        "speaker": "SPEAKER_2",
+        "text": "Stop it, mark on my side."
+      },
+      {
+        "start": 369.77,
+        "end": 370.61,
+        "speaker": "SPEAKER_1",
+        "text": "Mark on my side?"
+      },
+      {
+        "start": 370.61,
+        "end": 374.61,
+        "speaker": "SPEAKER_1",
+        "text": "Mahata.."
+      },
+      {
+        "start": 374.61,
+        "end": 376.61,
+        "speaker": "SPEAKER_1",
+        "text": "Hey.."
+      },
+      {
+        "start": 378.61,
+        "end": 381.61,
+        "speaker": "SPEAKER_2",
+        "text": "What were you saying?"
+      },
+      {
+        "start": 381.61,
+        "end": 385.61,
+        "speaker": "SPEAKER_2",
+        "text": "We were saying that I really missed you."
+      },
+      {
+        "start": 386.61,
+        "end": 389.61,
+        "speaker": "SPEAKER_1",
+        "text": "And I really missed you."
+      },
+      {
+        "start": 389.61,
+        "end": 396.08,
+        "speaker": "SPEAKER_1",
+        "text": "I really missed you."
+      },
+      {
+        "start": 426.08,
+        "end": 428.0,
+        "speaker": "SPEAKER_2",
+        "text": "Thura.. Thura.. umu kathya and curry koji.."
+      },
+      {
+        "start": 428.0,
+        "end": 430.64,
+        "speaker": "SPEAKER_2",
+        "text": "Thura.. Thura.. Thura.."
+      },
+      {
+        "start": 430.64,
+        "end": 431.1,
+        "speaker": "SPEAKER_2",
+        "text": "Thura.."
+      },
+      {
+        "start": 431.1,
+        "end": 431.72,
+        "speaker": "SPEAKER_2",
+        "text": "Thura.."
+      },
+      {
+        "start": 431.72,
+        "end": 432.44,
+        "speaker": "SPEAKER_2",
+        "text": "Thura.."
+      },
+      {
+        "start": 432.44,
+        "end": 433.16,
+        "speaker": "SPEAKER_2",
+        "text": "Thura.."
+      },
+      {
+        "start": 433.88,
+        "end": 434.88,
+        "speaker": "SPEAKER_2",
+        "text": "Sariya ta.."
+      },
+      {
+        "start": 438.8,
+        "end": 440.12,
+        "speaker": "SPEAKER_1",
+        "text": "Sariya, not shy."
+      },
+      {
+        "start": 443.74,
+        "end": 445.34,
+        "speaker": "SPEAKER_2",
+        "text": "Sambashya, yes, yes."
+      },
+      {
+        "start": 446.34,
+        "end": 447.92,
+        "speaker": "SPEAKER_1",
+        "text": "1-2-3, 2-3."
+      },
+      {
+        "start": 448.28,
+        "end": 448.68,
+        "speaker": "SPEAKER_1",
+        "text": "3.."
+      },
+      {
+        "start": 452.14,
+        "end": 452.9,
+        "speaker": "SPEAKER_2",
+        "text": "2-3."
+      },
+      {
+        "start": 453.6,
+        "end": 454.52,
+        "speaker": "SPEAKER_2",
+        "text": "Sariya.."
+      },
+      {
+        "start": 454.52,
+        "end": 455.78,
+        "speaker": "SPEAKER_2",
+        "text": "Come, go, go, go.."
+      },
+      {
+        "start": 455.78,
+        "end": 456.52,
+        "speaker": "SPEAKER_2",
+        "text": "You're welcome."
+      },
+      {
+        "start": 456.52,
+        "end": 457.8,
+        "speaker": "SPEAKER_2",
+        "text": "You're welcome."
+      },
+      {
+        "start": 458.44,
+        "end": 459.74,
+        "speaker": "SPEAKER_2",
+        "text": "Small dhir gava jawi."
+      },
+      {
+        "start": 459.74,
+        "end": 461.14,
+        "speaker": "SPEAKER_2",
+        "text": "Yes, you're welcome."
+      },
+      {
+        "start": 462.06,
+        "end": 472.06,
+        "speaker": "SPEAKER_1",
+        "text": "."
+      },
+      {
+        "start": 472.06,
+        "end": 480.06,
+        "speaker": "SPEAKER_1",
+        "text": "."
+      },
+      {
+        "start": 480.06,
+        "end": 488.06,
+        "speaker": "SPEAKER_1",
+        "text": "."
+      },
+      {
+        "start": 488.06,
+        "end": 492.14,
+        "speaker": "SPEAKER_1",
+        "text": "."
+      },
+      {
+        "start": 492.14,
+        "end": 494.14,
+        "speaker": "SPEAKER_1",
+        "text": "But you see, if you.."
+      },
+      {
+        "start": 495.5,
+        "end": 497.2,
+        "speaker": "SPEAKER_2",
+        "text": "..jana is always there."
+      },
+      {
+        "start": 497.2,
+        "end": 498.26,
+        "speaker": "SPEAKER_2",
+        "text": "Chayana is.."
+      },
+      {
+        "start": 498.26,
+        "end": 500.26,
+        "speaker": "SPEAKER_2",
+        "text": "..molder, when you say.."
+      },
+      {
+        "start": 502.26,
+        "end": 506.96,
+        "speaker": "SPEAKER_1",
+        "text": "..you say, if you say something, then you say, if you say something.."
+      },
+      {
+        "start": 506.96,
+        "end": 508.26,
+        "speaker": "SPEAKER_1",
+        "text": "..you say, no."
+      },
+      {
+        "start": 508.26,
+        "end": 510.16,
+        "speaker": "SPEAKER_1",
+        "text": "You say, if you say something, then you say, no."
+      },
+      {
+        "start": 510.16,
+        "end": 511.5,
+        "speaker": "SPEAKER_1",
+        "text": "You say, no."
+      },
+      {
+        "start": 511.5,
+        "end": 512.32,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 512.32,
+        "end": 513.8,
+        "speaker": "SPEAKER_1",
+        "text": "I will tell you that you say something."
+      },
+      {
+        "start": 513.8,
+        "end": 514.8,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 516.56,
+        "end": 518.68,
+        "speaker": "SPEAKER_2",
+        "text": "You say, you say, no."
+      },
+      {
+        "start": 518.68,
+        "end": 519.18,
+        "speaker": "SPEAKER_2",
+        "text": "Yes."
+      },
+      {
+        "start": 519.18,
+        "end": 519.98,
+        "speaker": "SPEAKER_2",
+        "text": "You say, no."
+      },
+      {
+        "start": 519.98,
+        "end": 520.48,
+        "speaker": "SPEAKER_2",
+        "text": "Yes."
+      },
+      {
+        "start": 520.48,
+        "end": 520.98,
+        "speaker": "SPEAKER_2",
+        "text": "Madhu."
+      },
+      {
+        "start": 520.98,
+        "end": 527.1,
+        "speaker": "SPEAKER_2",
+        "text": "Gaur streets Caner Road"
+      },
+      {
+        "start": 527.1,
+        "end": 527.86,
+        "speaker": "SPEAKER_2",
+        "text": "Hari.."
+      },
+      {
+        "start": 528.34,
+        "end": 544.76,
+        "speaker": "SPEAKER_2",
+        "text": "Hari.."
+      },
+      {
+        "start": 544.76,
+        "end": 546.54,
+        "speaker": "SPEAKER_2",
+        "text": "Claro"
+      }
+    ],
+    "speaker_summaries": {
+      "SPEAKER_1": "Hello. Hello. Namaste Vali. Yes, Namaste Vali. And how are you? I am from K. What are you doing? What are you doing? I am coming. Okay. I am coming. I am coming. Yes. I am coming. I am not going to call you. Okay. Okay. Okay. Okay. Let's go. Okay. Okay. You are coming. Okay. Okay. Okay. Okay. Okay. Okay. Very good. Very good. Very good. Very good. No, we are not going to call you. So, you are coming. And we are coming. Okay. Okay. I am going to call you. Okay. Okay. Okay. Okay. Stop. Okay. Okay. Okay. I am going to call you. So, we are going to call you. I am going to call you. Okay. I will call you. Okay. Okay. Okay. Okay. Okay. Good. Good. How are you going? I don't know. Yes. Okay. Okay. Okay. Come. Okay. I am not coming from the point of view. I am telling you the truth. Mark on my side? Mahata.. Hey.. And I really missed you. I really missed you. Sariya, not shy. 1-2-3, 2-3. 3.. . . . . But you see, if you.. ..you say, if you say something, then you say, if you say something.. ..you say, no. You say, if you say something, then you say, no. You say, no. Yes. I will tell you that you say something. Yes.",
+      "SPEAKER_2": "Okay. Okay. Okay. जाजनी इाजिन क्याते हैहु तलनी इसका फृजे कराति है. बहीं ही इसका नहीं क्याme करती इसकी इसरें डिने चाजीने इसकी इसका हैबनी करा अऩह hook जाबीं जरीट सकते नहती पनाती है है। No, it's not like you are not coming from the point of view. No, it's like you are coming from the point of view. Okay. What? I am saying that. Yes, I am saying that. I am saying that it's not a symbol. Stop it, mark on my side. What were you saying? We were saying that I really missed you. Thura.. Thura.. umu kathya and curry koji.. Thura.. Thura.. Thura.. Thura.. Thura.. Thura.. Thura.. Sariya ta.. Sambashya, yes, yes. 2-3. Sariya.. Come, go, go, go.. You're welcome. You're welcome. Small dhir gava jawi. Yes, you're welcome. ..jana is always there. Chayana is.. ..molder, when you say.. You say, you say, no. Yes. You say, no. Yes. Madhu. Gaur streets Caner Road Hari.. Hari.. Claro"
+    }
+  },
+  "details": {
+    "features": {
+      "urgency_phrase_count": 0,
+      "otp_credential_mentions": 0,
+      "money_payment_mentions": 0,
+      "authority_impersonation_signals": 0,
+      "off_platform_mentions": 0,
+      "secrecy_mentions": 0,
+      "credential_harvest_signals": 0,
+      "action_request_mentions": 1,
+      "financial_account_mentions": 0,
+      "known_scam_script_hits": 0,
+      "caller_dominance_ratio_speaker1": 0.6274768262607364,
+      "known_scam_phrase_hits": [],
+      "transcript_text": "Hello. Hello. Namaste Vali. Yes, Namaste Vali. And how are you? I am from K. What are you doing? What are you doing? I am coming. Okay. I am coming. I am coming. Yes. I am coming. I am not going to call you. Okay. Okay. Okay. Okay. Let's go. Okay. Okay. You are coming. Okay. Okay. Okay. Okay. Okay. Okay. Very good. Very good. Very good. Very good. No, we are not going to call you. So, you are coming. And we are coming. Okay. Okay. I am going to call you. Okay. Okay. Okay. Okay. Stop. Okay. Okay. Okay. I am going to call you. So, we are going to call you. I am going to call you. Okay. I will call you. Okay. Okay. Okay. Okay. Okay. Good. Good. How are you going? I don't know. Yes. Okay. Okay. Okay. Okay. Okay. Okay. Come. Okay. जाजनी इाजिन क्याते हैहु तलनी इसका फृजे कराति है. बहीं ही इसका नहीं क्याme करती इसकी इसरें डिने चाजीने इसकी इसका हैबनी करा अऩह hook जाबीं जरीट सकते नहती पनाती है है। I am not coming from the point of view. No, it's not like you are not coming from the point of view. No, it's like you are coming from the point of view. Okay. I am telling you the truth. What? I am saying that. Yes, I am saying that. I am saying that it's not a symbol. Stop it, mark on my side. Mark on my side? Mahata.. Hey.. What were you saying? We were saying that I really missed you. And I really missed you. I really missed you. Thura.. Thura.. umu kathya and curry koji.. Thura.. Thura.. Thura.. Thura.. Thura.. Thura.. Thura.. Sariya ta.. Sariya, not shy. Sambashya, yes, yes. 1-2-3, 2-3. 3.. 2-3. Sariya.. Come, go, go, go.. You're welcome. You're welcome. Small dhir gava jawi. Yes, you're welcome. . . . . But you see, if you.. ..jana is always there. Chayana is.. ..molder, when you say.. ..you say, if you say something, then you say, if you say something.. ..you say, no. You say, if you say something, then you say, no. You say, no. Yes. I will tell you that you say something. Yes. You say, you say, no. Yes. You say, no. Yes. Madhu. Gaur streets Caner Road Hari.. Hari.. Claro"
+    },
+    "original_score": 17.0,
+    "advanced_analysis": {
+      "risk_score": 0.0,
+      "risk_level": "LOW",
+      "confidence": 0.0,
+      "matches": [],
+      "context_analysis": {
+        "urgency_count": 1,
+        "financial_count": 0,
+        "authority_count": 0,
+        "multiplier": 1.2
+      }
+    }
+  }
+}

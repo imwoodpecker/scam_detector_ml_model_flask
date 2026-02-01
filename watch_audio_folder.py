@@ -1,16 +1,4 @@
-"""
-watch_audio_folder.py
-
-Drop-folder runner:
-- Put .mp3 or .wav files into ./audio_inbox/
-- This script detects new files, runs audio_risk_pipeline.analyze_audio(),
-  writes results to ./audio_outbox/<name>.json
-- Moves processed audio to ./audio_inbox/processed/ (or ./audio_inbox/failed/)
-
-Offline notes:
-- .mp3 requires ffmpeg in PATH OR convert to wav first.
-- STT backend must be installed (faster-whisper, whisper, or vosk + local model).
-"""
+"""Watch audio folder and process files with auto-deletion."""
 
 from __future__ import annotations
 
@@ -23,7 +11,6 @@ import uuid
 from dataclasses import dataclass
 
 from audio_risk_pipeline import analyze_audio
-from notifier import notify_risk
 
 
 @dataclass(frozen=True)
@@ -35,8 +22,7 @@ class Config:
 
 
 def _is_audio(name: str) -> bool:
-    n = name.lower()
-    return n.endswith(".wav") or n.endswith(".mp3")
+    return name.lower().endswith((".wav", ".mp3"))
 
 
 def _ensure_dirs(cfg: Config) -> tuple[str, str, str]:
@@ -52,11 +38,6 @@ def _ensure_dirs(cfg: Config) -> tuple[str, str, str]:
 
 
 def _stable_file(path: str, stable_seconds: float) -> bool:
-    """
-    Avoid processing a file while it is still being copied into the folder.
-    Deterministic: size must remain constant over stable_seconds.
-    """
-
     try:
         s1 = os.path.getsize(path)
     except OSError:
@@ -70,7 +51,6 @@ def _stable_file(path: str, stable_seconds: float) -> bool:
 
 
 def _write_json(out_path: str, obj: dict) -> None:
-    # Windows/OneDrive can briefly lock files; use unique temp names + retries.
     last_err: Exception | None = None
     for _attempt in range(6):
         tmp = f"{out_path}.{os.getpid()}.{uuid.uuid4().hex}.tmp"
@@ -135,25 +115,29 @@ def run(argv: list[str] | None = None) -> int:
             try:
                 result = analyze_audio(path)
                 _write_json(out_path, result)
-                # Live desktop hint with risk number & type.
+                # Delete original audio file after successful processing
                 try:
-                    notify_risk(
-                        float(result.get("risk_score", 0.0)),
-                        str(result.get("risk_level", "")),
-                        summary=str(result.get("summary", "")),
-                    )
-                except Exception:
-                    # Notification is best-effort; never break analysis.
-                    pass
-                shutil.move(path, os.path.join(processed, name))
+                    os.remove(path)
+                    print(f"Deleted original audio file: {name}")
+                except OSError as e:
+                    print(f"Warning: Could not delete {name}: {e}")
+                    try:
+                        shutil.move(path, os.path.join(processed, name))
+                    except OSError:
+                        pass
                 print(f"OK: wrote {os.path.basename(out_path)}")
             except Exception as e:
                 err = {"error": str(e), "file": name}
                 _write_json(os.path.join(outbox, base + ".error.json"), err)
                 try:
-                    shutil.move(path, os.path.join(failed, name))
-                except OSError:
-                    pass
+                    os.remove(path)
+                    print(f"Deleted failed audio file: {name}")
+                except OSError as e:
+                    print(f"Warning: Could not delete failed file {name}: {e}")
+                    try:
+                        shutil.move(path, os.path.join(failed, name))
+                    except OSError:
+                        pass
                 print(f"FAILED: {name} ({e})")
 
         time.sleep(cfg.poll_seconds)

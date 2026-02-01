@@ -1,78 +1,35 @@
-import sys
+"""
+scam_detector.py
 
-PHRASES = {
-    "verify your account": 15,
-    "urgent": 10,
-    "do not disconnect": 15,
-    "account may be blocked": 20,
-    "click the link": 15,
-    "otp": 25,
-    "legal action": 20,
-}
+Simple scam detection interface.
+"""
 
-AUTHORITY = ["bank", "police", "rbi", "officer"]
-URGENCY = ["urgent", "immediately", "now"]
+from __future__ import annotations
 
-score = 0
-matched_phrases = set()
-signals = set()
-timeline = []
+from audio_risk_pipeline import analyze_audio
 
-def contains_url(text):
-    return "http://" in text or "https://" in text or "www." in text
+def detect_scam(audio_file_path: str) -> dict:
+    """Detect scam in audio file."""
+    try:
+        result = analyze_audio(audio_file_path)
+        return {
+            'success': True,
+            'risk_level': result.get('risk_level', 'UNKNOWN'),
+            'risk_score': result.get('risk_score', 0),
+            'summary': result.get('summary', ''),
+            'details': result
+        }
+    except Exception as e:
+        return {
+            'success': False,
+            'error': str(e)
+        }
 
-# Read streaming input
-conversation = sys.stdin.read().lower().splitlines()
-
-for line in conversation:
-    # Phrase matching
-    for phrase, weight in PHRASES.items():
-        if phrase in line:
-            score += weight
-            matched_phrases.add(phrase)
-            timeline.append(phrase)
-
-    # Authority
-    for word in AUTHORITY:
-        if word in line:
-            signals.add(f"authority_impersonation:{word}")
-            timeline.append("authority")
-
-    # Urgency
-    for word in URGENCY:
-        if word in line:
-            signals.add("urgency_detected")
-            timeline.append("urgency")
-
-    # URL
-    if contains_url(line):
-        score += 5
-        signals.add("contains_url")
-
-# Sequence bonus: authority → urgency → action
-if "authority" in timeline and "urgency" in timeline and ("otp" in timeline or "click the link" in timeline):
-    score += 10
-    signals.add("dangerous_sequence:authority_urgency_action")
-
-# Clamp score
-score = min(score, 100)
-
-# Risk level
-if score >= 70:
-    level = "high"
-elif score >= 40:
-    level = "medium"
-else:
-    level = "low"
-
-# ---- FINAL OUTPUT ----
-print(f"risk_score: {score}/100")
-print(f"risk_level: {level}")
-print("matched_phrases:")
-for p in sorted(matched_phrases):
-    print(f"  - {p}")
-print("signals:")
-for s in sorted(signals):
-    print(f"  - {s}")
-print("explanation:")
-print("  - Risk calculated using phrase detection, urgency, authority impersonation, and sequence analysis")
+if __name__ == "__main__":
+    import sys
+    if len(sys.argv) > 1:
+        audio_file = sys.argv[1]
+        result = detect_scam(audio_file)
+        print(result)
+    else:
+        print("Usage: python scam_detector.py <audio_file>")

@@ -13,6 +13,7 @@ from typing import Iterable
 
 from matcher import fuzzy_phrase_match, tokenize
 from phrase_bank import RULE_PHRASES, SCAM_PHRASES, SUSPICIOUS_KEYWORDS
+from text_normalizer import normalize_text_for_scoring, expand_keywords_with_variants
 from timeline import Timeline
 
 
@@ -87,19 +88,27 @@ def assess_text(
     timeline: Timeline | None = None,
     chunk_index: int | None = None,
     is_final: bool = False,
+    detected_language: str | None = None,
 ) -> Assessment:
     """
     Deterministically assess the current transcript and return explainable evidence.
+    Enhanced with multi-language text normalization.
     """
 
     t = (text or "").strip()
-    t_low = t.lower()
+    
+    # Apply text normalization for multi-language support
+    t_normalized = normalize_text_for_scoring(t, detected_language)
+    t_low = t_normalized.lower()
 
     score = 0
     evidences: list[Evidence] = []
     signals: list[str] = []
 
-    # --- Core rule groups (explainable) ---
+    # --- Core rule groups (explainable) with expanded keyword variants ---
+    # Expand suspicious keywords with multilingual variants
+    expanded_keywords = expand_keywords_with_variants(set(SUSPICIOUS_KEYWORDS))
+    
     score += _add_evidence(
         evidences,
         "PRESSURE_URGENCY",
@@ -143,7 +152,7 @@ def assess_text(
         (p for p in RULE_PHRASES.get("AUTHORITY_IMPERSONATION", []) if p in t_low),
     )
 
-    # --- Phrase bank (back-compat + extra evidence) ---
+    # --- Phrase bank (back-compat + extra evidence) with normalization ---
     phrase_hits = [phrase for phrase in SCAM_PHRASES if phrase in t_low]
     if phrase_hits:
         # Keep weight modest since rule groups already cover many phrases.
@@ -155,20 +164,20 @@ def assess_text(
             phrase_hits,
         )
 
-    # --- Keyword density (signal-level) ---
-    kw_hits = sorted({kw for kw in SUSPICIOUS_KEYWORDS if kw in t_low})
+    # --- Keyword density (signal-level) with multilingual expansion ---
+    kw_hits = sorted({kw for kw in expanded_keywords if kw in t_low})
     if kw_hits:
         signals.append(f"keywords:{','.join(kw_hits[:10])}" + ("..." if len(kw_hits) > 10 else ""))
         score += min(20, 2 * len(kw_hits))
 
     # --- Regex-based signals ---
-    if _URL_RE.search(t):
+    if _URL_RE.search(t_low):
         signals.append("contains_url")
         score += 12
-    if _PHONE_RE.search(t):
+    if _PHONE_RE.search(t_low):
         signals.append("contains_phone_number")
         score += 6
-    if _MONEY_RE.search(t):
+    if _MONEY_RE.search(t_low):
         signals.append("mentions_money_amount")
         score += 6
 
@@ -251,10 +260,12 @@ class StreamingScorer:
     - escalation gradient multipliers
     - false-positive suppression cues
     - traceability for every score change
+    - multi-language text normalization support
     """
 
-    def __init__(self, *, session_id: str = "default") -> None:
+    def __init__(self, *, session_id: str = "default", detected_language: str | None = None) -> None:
         self.session_id = session_id
+        self.detected_language = detected_language
         self.timeline = Timeline(session_id=session_id)
         self.tokens: list[str] = []
         self.chunk_index = 0
@@ -313,8 +324,11 @@ class StreamingScorer:
         self.chunk_index += 1
         self.timeline.add("chunk_ingested", detail=f"i={self.chunk_index},len={len(chunk or '')}")
 
+        # Apply text normalization for multi-language support
+        normalized_chunk = normalize_text_for_scoring(chunk, self.detected_language)
+
         # Update tokens (streaming-friendly; tokenization is deterministic)
-        self.tokens.extend(tokenize(chunk))
+        self.tokens.extend(tokenize(normalized_chunk))
 
         # Apply decay before evaluating this chunk (signals weaken if not reinforced)
         self._decay()

@@ -1,14 +1,4 @@
-"""
-process_audio_inbox_once.py
-
-One-shot processor:
-- Scans ./audio_inbox for .wav/.mp3
-- Runs audio_risk_pipeline.analyze_audio() on each file
-- Writes ./audio_outbox/<name>.json
-- Moves audio to ./audio_inbox/processed/ (or ./audio_inbox/failed/)
-
-Use this when you want: "clear previous data and process what's in inbox now".
-"""
+"""Process audio files and delete originals after analysis."""
 
 from __future__ import annotations
 
@@ -21,7 +11,6 @@ import uuid
 from dataclasses import dataclass
 
 from audio_risk_pipeline import analyze_audio
-from notifier import notify_risk
 
 
 @dataclass(frozen=True)
@@ -31,14 +20,10 @@ class Config:
 
 
 def _is_audio(name: str) -> bool:
-    n = name.lower()
-    return n.endswith(".wav") or n.endswith(".mp3")
+    return name.lower().endswith((".wav", ".mp3"))
 
 
 def _write_json(path: str, obj: dict) -> None:
-    """
-    Windows/OneDrive can briefly lock files; use unique temp names + retries.
-    """
     last_err: Exception | None = None
     for _attempt in range(6):
         tmp = f"{path}.{os.getpid()}.{uuid.uuid4().hex}.tmp"
@@ -59,7 +44,7 @@ def _write_json(path: str, obj: dict) -> None:
 
 
 def run(argv: list[str] | None = None) -> int:
-    p = argparse.ArgumentParser(description="Process audio_inbox once and exit.")
+    p = argparse.ArgumentParser(description="Process audio inbox once and exit.")
     p.add_argument("--inbox", default="audio_inbox")
     p.add_argument("--outbox", default="audio_outbox")
     args = p.parse_args(argv)
@@ -87,25 +72,29 @@ def run(argv: list[str] | None = None) -> int:
         try:
             result = analyze_audio(src)
             _write_json(out_path, result)
-            # Live desktop hint with risk number & type.
+            # Delete original audio file after successful processing
             try:
-                notify_risk(
-                    float(result.get("risk_score", 0.0)),
-                    str(result.get("risk_level", "")),
-                    summary=str(result.get("summary", "")),
-                )
-            except Exception:
-                # Notification is best-effort; never break analysis.
-                pass
-            shutil.move(src, os.path.join(processed, name))
+                os.remove(src)
+                print(f"Deleted original audio file: {name}")
+            except OSError as e:
+                print(f"Warning: Could not delete {name}: {e}")
+                try:
+                    shutil.move(src, os.path.join(processed, name))
+                except OSError:
+                    pass
             print(f"OK: {os.path.basename(out_path)}")
         except Exception as e:
             err = {"error": str(e), "file": name}
             _write_json(os.path.join(outbox, base + ".error.json"), err)
             try:
-                shutil.move(src, os.path.join(failed, name))
-            except OSError:
-                pass
+                os.remove(src)
+                print(f"Deleted failed audio file: {name}")
+            except OSError as e:
+                print(f"Warning: Could not delete failed file {name}: {e}")
+                try:
+                    shutil.move(src, os.path.join(failed, name))
+                except OSError:
+                    pass
             print(f"FAILED: {name} ({e})")
 
     return 0

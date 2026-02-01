@@ -1,0 +1,10 @@
+faster-whisper
+openai-whisper
+vosk
+librosa
+noisereduce
+numpy
+scipy
+soundfile
+scikit-learn
+pandas

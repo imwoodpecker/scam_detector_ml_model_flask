@@ -1,0 +1,432 @@
+{
+  "risk_score": 60,
+  "risk_level": "MEDIUM",
+  "transcript_quality": {
+    "quality_score": 0.9591489361702128,
+    "quality_level": "HIGH",
+    "is_sufficient_for_scoring": true,
+    "explanation": "Transcript appears coherent",
+    "metrics": {
+      "token_count": 235,
+      "segment_count": 56,
+      "avg_segment_duration": 1.5950000000000002,
+      "short_token_ratio": 0.17872340425531916,
+      "has_meaningful_content": true,
+      "repetition_score": 0.13617021276595745,
+      "gibberish_score": 0.0
+    },
+    "recommendation": "PROCEED"
+  },
+  "audio_quality": {
+    "original": {
+      "duration_seconds": 108.3675625,
+      "silence_percentage": 63.92843568849303,
+      "snr_estimate_db": 60.0,
+      "sample_rate": 16000
+    },
+    "processed": {
+      "duration_seconds": 108.3675625,
+      "silence_percentage": 53.87001760789813,
+      "snr_estimate_db": 60.0,
+      "sample_rate": 16000
+    },
+    "preprocessing_applied": [
+      "high_pass_filter",
+      "noise_reduction",
+      "loudness_normalization"
+    ]
+  },
+  "stt_backend": {
+    "backend": "faster_whisper",
+    "model": "tiny",
+    "language": "hi",
+    "language_probability": 1.0
+  },
+  "flags": [
+    "AUTHORITY_IMPERSONATION",
+    "CREDENTIAL_OTP"
+  ],
+  "summary": "Caller requested sensitive financial credentials (codes/card/account details). Caller appears to impersonate a bank, card network, or fraud/security department. One speaker dominates the conversation while requesting sensitive information. Final risk: high (100/100).",
+  "language": {
+    "detected": "hi",
+    "detected_name": "Hindi",
+    "supported": true,
+    "confidence": 1.0
+  },
+  "transcript": {
+    "segments": [
+      {
+        "start": 0.0,
+        "end": 2.18,
+        "speaker": "SPEAKER_1",
+        "text": "Ahmed Sukala sharewaapu Rheer."
+      },
+      {
+        "start": 3.58,
+        "end": 4.84,
+        "speaker": "SPEAKER_2",
+        "text": "cylinders.."
+      },
+      {
+        "start": 4.84,
+        "end": 7.88,
+        "speaker": "SPEAKER_2",
+        "text": "We will also come to the ground at a time now.."
+      },
+      {
+        "start": 7.88,
+        "end": 9.66,
+        "speaker": "SPEAKER_2",
+        "text": "..begambans Hana Headquarters of Subtentir Paraya."
+      },
+      {
+        "start": 10.16,
+        "end": 12.66,
+        "speaker": "SPEAKER_2",
+        "text": "You will tell that your mobile cell phones.."
+      },
+      {
+        "start": 12.66,
+        "end": 14.26,
+        "speaker": "SPEAKER_2",
+        "text": "..are Google Chrome, Ra sugar party.."
+      },
+      {
+        "start": 14.26,
+        "end": 15.06,
+        "speaker": "SPEAKER_2",
+        "text": "..indefreshing to be given as.."
+      },
+      {
+        "start": 15.06,
+        "end": 18.16,
+        "speaker": "SPEAKER_2",
+        "text": "..Pirpalis Kitesheer, of Manitjaya, from this point.."
+      },
+      {
+        "start": 18.16,
+        "end": 19.4,
+        "speaker": "SPEAKER_2",
+        "text": "..dater to make the video available."
+      },
+      {
+        "start": 19.4,
+        "end": 21.94,
+        "speaker": "SPEAKER_2",
+        "text": "It is written on the bottom of your phone, by lakhs."
+      },
+      {
+        "start": 23.18,
+        "end": 24.28,
+        "speaker": "SPEAKER_1",
+        "text": "Yes!"
+      },
+      {
+        "start": 24.28,
+        "end": 25.44,
+        "speaker": "SPEAKER_1",
+        "text": "Why?"
+      },
+      {
+        "start": 26.46,
+        "end": 28.44,
+        "speaker": "SPEAKER_2",
+        "text": "How is your mobile cell phone.."
+      },
+      {
+        "start": 28.44,
+        "end": 31.68,
+        "speaker": "SPEAKER_2",
+        "text": "This is a romantic song for this segment."
+      },
+      {
+        "start": 31.68,
+        "end": 33.48,
+        "speaker": "SPEAKER_2",
+        "text": "This is our Karthi Parmi."
+      },
+      {
+        "start": 33.48,
+        "end": 35.12,
+        "speaker": "SPEAKER_2",
+        "text": "Isn't it wonderful that you are here?"
+      },
+      {
+        "start": 38.84,
+        "end": 40.76,
+        "speaker": "SPEAKER_1",
+        "text": "Madala, this is your mobile cell phone."
+      },
+      {
+        "start": 40.76,
+        "end": 42.36,
+        "speaker": "SPEAKER_1",
+        "text": "This is Google Chrome Ravjar."
+      },
+      {
+        "start": 42.36,
+        "end": 44.2,
+        "speaker": "SPEAKER_1",
+        "text": "Ghandi Sandeepi Gapan Tripala."
+      },
+      {
+        "start": 44.2,
+        "end": 46.2,
+        "speaker": "SPEAKER_1",
+        "text": "This is our Karthi Parmi."
+      },
+      {
+        "start": 46.2,
+        "end": 48.84,
+        "speaker": "SPEAKER_1",
+        "text": "This is our Karthi Parmi."
+      },
+      {
+        "start": 48.84,
+        "end": 50.2,
+        "speaker": "SPEAKER_1",
+        "text": "This is our Karthi Parmi."
+      },
+      {
+        "start": 50.2,
+        "end": 51.4,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 51.4,
+        "end": 52.4,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 52.4,
+        "end": 53.4,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 53.4,
+        "end": 54.6,
+        "speaker": "SPEAKER_1",
+        "text": "Parmi is our Karthi Parmi."
+      },
+      {
+        "start": 54.6,
+        "end": 55.6,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 55.6,
+        "end": 58.84,
+        "speaker": "SPEAKER_1",
+        "text": "Sarmaakar, Karthi Parmi, this is our Karthi Parmi."
+      },
+      {
+        "start": 58.84,
+        "end": 60.24,
+        "speaker": "SPEAKER_1",
+        "text": "15 minutes."
+      },
+      {
+        "start": 60.24,
+        "end": 61.56,
+        "speaker": "SPEAKER_1",
+        "text": "Sarma, listen."
+      },
+      {
+        "start": 61.56,
+        "end": 62.52,
+        "speaker": "SPEAKER_1",
+        "text": "Listen."
+      },
+      {
+        "start": 62.52,
+        "end": 63.92,
+        "speaker": "SPEAKER_1",
+        "text": "Brother, hello."
+      },
+      {
+        "start": 64.92,
+        "end": 66.12,
+        "speaker": "SPEAKER_2",
+        "text": "Hello."
+      },
+      {
+        "start": 66.48,
+        "end": 67.92,
+        "speaker": "SPEAKER_2",
+        "text": "Brother, come on."
+      },
+      {
+        "start": 67.92,
+        "end": 69.12,
+        "speaker": "SPEAKER_2",
+        "text": "Come on."
+      },
+      {
+        "start": 69.12,
+        "end": 70.36,
+        "speaker": "SPEAKER_2",
+        "text": "Come on."
+      },
+      {
+        "start": 70.52,
+        "end": 71.72,
+        "speaker": "SPEAKER_2",
+        "text": "Come on."
+      },
+      {
+        "start": 71.72,
+        "end": 73.28,
+        "speaker": "SPEAKER_2",
+        "text": "Come on."
+      },
+      {
+        "start": 74.76,
+        "end": 75.92,
+        "speaker": "SPEAKER_1",
+        "text": "Hello."
+      },
+      {
+        "start": 76.36,
+        "end": 77.64,
+        "speaker": "SPEAKER_1",
+        "text": "Come on, come on."
+      },
+      {
+        "start": 77.64,
+        "end": 78.44,
+        "speaker": "SPEAKER_1",
+        "text": "Come on."
+      },
+      {
+        "start": 78.44,
+        "end": 80.4,
+        "speaker": "SPEAKER_1",
+        "text": "Don't get angry."
+      },
+      {
+        "start": 80.88,
+        "end": 81.64,
+        "speaker": "SPEAKER_1",
+        "text": "Come on."
+      },
+      {
+        "start": 81.64,
+        "end": 82.84,
+        "speaker": "SPEAKER_1",
+        "text": "Come on."
+      },
+      {
+        "start": 82.92,
+        "end": 84.44,
+        "speaker": "SPEAKER_1",
+        "text": "One five minutes is the signature."
+      },
+      {
+        "start": 84.44,
+        "end": 85.8,
+        "speaker": "SPEAKER_1",
+        "text": "It's the signature."
+      },
+      {
+        "start": 85.8,
+        "end": 87.48,
+        "speaker": "SPEAKER_1",
+        "text": "So, if the letter is written,"
+      },
+      {
+        "start": 87.48,
+        "end": 89.8,
+        "speaker": "SPEAKER_1",
+        "text": "if the letter is written, it is a signature."
+      },
+      {
+        "start": 89.8,
+        "end": 91.44,
+        "speaker": "SPEAKER_1",
+        "text": "If the letter is written, it is written."
+      },
+      {
+        "start": 91.44,
+        "end": 91.88,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 91.88,
+        "end": 95.36,
+        "speaker": "SPEAKER_1",
+        "text": "One hundred hundred hundred hundred hundred hundred thousand."
+      },
+      {
+        "start": 95.36,
+        "end": 96.48,
+        "speaker": "SPEAKER_1",
+        "text": "Okay."
+      },
+      {
+        "start": 96.48,
+        "end": 97.76,
+        "speaker": "SPEAKER_1",
+        "text": "What do I do?"
+      },
+      {
+        "start": 97.76,
+        "end": 98.72,
+        "speaker": "SPEAKER_1",
+        "text": "I'm telling you that?"
+      },
+      {
+        "start": 98.72,
+        "end": 100.2,
+        "speaker": "SPEAKER_1",
+        "text": "I'm telling you that you will tell me."
+      },
+      {
+        "start": 100.2,
+        "end": 101.2,
+        "speaker": "SPEAKER_1",
+        "text": "I'm saying this."
+      }
+    ],
+    "speaker_summaries": {
+      "SPEAKER_1": "Ahmed Sukala sharewaapu Rheer. Yes! Why? Madala, this is your mobile cell phone. This is Google Chrome Ravjar. Ghandi Sandeepi Gapan Tripala. This is our Karthi Parmi. This is our Karthi Parmi. This is our Karthi Parmi. Yes. Yes. Yes. Parmi is our Karthi Parmi. Yes. Sarmaakar, Karthi Parmi, this is our Karthi Parmi. 15 minutes. Sarma, listen. Listen. Brother, hello. Hello. Come on, come on. Come on. Don't get angry. Come on. Come on. One five minutes is the signature. It's the signature. So, if the letter is written, if the letter is written, it is a signature. If the letter is written, it is written. Yes. One hundred hundred hundred hundred hundred hundred thousand. Okay. What do I do? I'm telling you that? I'm telling you that you will tell me. I'm saying this.",
+      "SPEAKER_2": "cylinders.. We will also come to the ground at a time now.. ..begambans Hana Headquarters of Subtentir Paraya. You will tell that your mobile cell phones.. ..are Google Chrome, Ra sugar party.. ..indefreshing to be given as.. ..Pirpalis Kitesheer, of Manitjaya, from this point.. ..dater to make the video available. It is written on the bottom of your phone, by lakhs. How is your mobile cell phone.. This is a romantic song for this segment. This is our Karthi Parmi. Isn't it wonderful that you are here? Hello. Brother, come on. Come on. Come on. Come on. Come on."
+    }
+  },
+  "details": {
+    "features": {
+      "urgency_phrase_count": 0,
+      "otp_credential_mentions": 2,
+      "money_payment_mentions": 0,
+      "authority_impersonation_signals": 1,
+      "off_platform_mentions": 0,
+      "secrecy_mentions": 0,
+      "credential_harvest_signals": 0,
+      "action_request_mentions": 1,
+      "financial_account_mentions": 0,
+      "known_scam_script_hits": 0,
+      "caller_dominance_ratio_speaker1": 0.6153157187639947,
+      "known_scam_phrase_hits": [
+        "code parayu"
+      ],
+      "transcript_text": "Ahmed Sukala sharewaapu Rheer. cylinders.. We will also come to the ground at a time now.. ..begambans Hana Headquarters of Subtentir Paraya. You will tell that your mobile cell phones.. ..are Google Chrome, Ra sugar party.. ..indefreshing to be given as.. ..Pirpalis Kitesheer, of Manitjaya, from this point.. ..dater to make the video available. It is written on the bottom of your phone, by lakhs. Yes! Why? How is your mobile cell phone.. This is a romantic song for this segment. This is our Karthi Parmi. Isn't it wonderful that you are here? Madala, this is your mobile cell phone. This is Google Chrome Ravjar. Ghandi Sandeepi Gapan Tripala. This is our Karthi Parmi. This is our Karthi Parmi. This is our Karthi Parmi. Yes. Yes. Yes. Parmi is our Karthi Parmi. Yes. Sarmaakar, Karthi Parmi, this is our Karthi Parmi. 15 minutes. Sarma, listen. Listen. Brother, hello. Hello. Brother, come on. Come on. Come on. Come on. Come on. Hello. Come on, come on. Come on. Don't get angry. Come on. Come on. One five minutes is the signature. It's the signature. So, if the letter is written, if the letter is written, it is a signature. If the letter is written, it is written. Yes. One hundred hundred hundred hundred hundred hundred thousand. Okay. What do I do? I'm telling you that? I'm telling you that you will tell me. I'm saying this."
+    },
+    "original_score": 100.0,
+    "advanced_analysis": {
+      "risk_score": 0.0,
+      "risk_level": "LOW",
+      "confidence": 0.0,
+      "matches": [],
+      "context_analysis": {
+        "urgency_count": 1,
+        "financial_count": 0,
+        "authority_count": 0,
+        "multiplier": 1.2
+      }
+    }
+  }
+}

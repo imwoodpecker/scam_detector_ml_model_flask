@@ -1,0 +1,552 @@
+{
+  "risk_score": 87,
+  "risk_level": "CRITICAL",
+  "transcript_quality": {
+    "quality_score": 0.9733944954128441,
+    "quality_level": "HIGH",
+    "is_sufficient_for_scoring": true,
+    "explanation": "Transcript appears coherent",
+    "metrics": {
+      "token_count": 654,
+      "segment_count": 73,
+      "avg_segment_duration": 2.854246575342465,
+      "short_token_ratio": 0.22477064220183487,
+      "has_meaningful_content": true,
+      "repetition_score": 0.08868501529051988,
+      "gibberish_score": 0.0
+    },
+    "recommendation": "PROCEED"
+  },
+  "audio_quality": {
+    "original": {
+      "duration_seconds": 220.248,
+      "silence_percentage": 49.49230526497403,
+      "snr_estimate_db": 47.797847747802734,
+      "sample_rate": 16000
+    },
+    "processed": {
+      "duration_seconds": 220.248,
+      "silence_percentage": 48.69045348879445,
+      "snr_estimate_db": 51.09604136197493,
+      "sample_rate": 16000
+    },
+    "preprocessing_applied": [
+      "high_pass_filter",
+      "noise_reduction",
+      "loudness_normalization"
+    ]
+  },
+  "stt_backend": {
+    "backend": "faster_whisper",
+    "model": "tiny",
+    "language": "en",
+    "language_probability": 0.9947494864463806
+  },
+  "flags": [
+    "ADVANCED_URGENCY",
+    "AUTHORITY_IMPERSONATION",
+    "CREDENTIAL_OTP",
+    "ESCALATION_MULTIPLIER",
+    "FALSE_POSITIVE_SUPPRESSION",
+    "PAYMENT_METHOD_RISK"
+  ],
+  "summary": "Caller requested sensitive financial credentials (codes/card/account details). High-risk payment or money-related language detected. Caller appears to impersonate a bank, card network, or fraud/security department. One speaker dominates the conversation while requesting sensitive information. Final risk: high (100/100).",
+  "language": {
+    "detected": "en",
+    "detected_name": "Unknown",
+    "supported": false,
+    "confidence": 0.9947494864463806
+  },
+  "transcript": {
+    "segments": [
+      {
+        "start": 10.22,
+        "end": 13.9,
+        "speaker": "SPEAKER_1",
+        "text": "This is Chief Investigator Sharon, right at my speaking with"
+      },
+      {
+        "start": 13.9,
+        "end": 14.9,
+        "speaker": "SPEAKER_1",
+        "text": "****."
+      },
+      {
+        "start": 14.9,
+        "end": 15.9,
+        "speaker": "SPEAKER_1",
+        "text": "Yes."
+      },
+      {
+        "start": 15.9,
+        "end": 17.9,
+        "speaker": "SPEAKER_1",
+        "text": "Again, my name is Investigator Sharon Wright."
+      },
+      {
+        "start": 17.9,
+        "end": 21.3,
+        "speaker": "SPEAKER_1",
+        "text": "I am investigating a criminal complaint that has been"
+      },
+      {
+        "start": 21.3,
+        "end": 25.38,
+        "speaker": "SPEAKER_1",
+        "text": "40 here in the office to get you by **** Cash Express."
+      },
+      {
+        "start": 25.38,
+        "end": 28.98,
+        "speaker": "SPEAKER_1",
+        "text": "We are in the process of proceeding to get you legally."
+      },
+      {
+        "start": 28.98,
+        "end": 31.82,
+        "speaker": "SPEAKER_1",
+        "text": "Now, prior to footness to your local authorities and"
+      },
+      {
+        "start": 31.82,
+        "end": 34.22,
+        "speaker": "SPEAKER_1",
+        "text": "return them, it's going to want for your rest."
+      },
+      {
+        "start": 34.22,
+        "end": 37.58,
+        "speaker": "SPEAKER_1",
+        "text": "I did want to contact you get a statement and find out exactly"
+      },
+      {
+        "start": 37.58,
+        "end": 39.18,
+        "speaker": "SPEAKER_1",
+        "text": "what were your intentions."
+      },
+      {
+        "start": 39.34,
+        "end": 40.86,
+        "speaker": "SPEAKER_1",
+        "text": "But what is this?"
+      },
+      {
+        "start": 40.86,
+        "end": 44.7,
+        "speaker": "SPEAKER_1",
+        "text": "I'm not understanding what is this **** Cash Express is stating that you"
+      },
+      {
+        "start": 44.7,
+        "end": 49.18,
+        "speaker": "SPEAKER_1",
+        "text": "did walk into their facility to obtain a paid-a loan."
+      },
+      {
+        "start": 49.18,
+        "end": 52.54,
+        "speaker": "SPEAKER_1",
+        "text": "You did give them your personal check and information along with a"
+      },
+      {
+        "start": 52.54,
+        "end": 56.54,
+        "speaker": "SPEAKER_1",
+        "text": "data to when they can extract the funds to be paid by for the loan."
+      },
+      {
+        "start": 56.54,
+        "end": 60.06,
+        "speaker": "SPEAKER_1",
+        "text": "Once they went to receive the funds, the funds were not available."
+      },
+      {
+        "start": 60.06,
+        "end": 64.06,
+        "speaker": "SPEAKER_1",
+        "text": "Now, they did make several attempts to try and contact you to rectify it."
+      },
+      {
+        "start": 64.06,
+        "end": 66.62,
+        "speaker": "SPEAKER_1",
+        "text": "They sent you to three different collection agencies."
+      },
+      {
+        "start": 66.62,
+        "end": 69.74,
+        "speaker": "SPEAKER_1",
+        "text": "They also made the attempts to try and rectify it."
+      },
+      {
+        "start": 69.74,
+        "end": 71.5,
+        "speaker": "SPEAKER_1",
+        "text": "Receive no resolution."
+      },
+      {
+        "start": 71.5,
+        "end": 73.74,
+        "speaker": "SPEAKER_1",
+        "text": "So they did transfer your file to my office,"
+      },
+      {
+        "start": 73.74,
+        "end": 76.78,
+        "speaker": "SPEAKER_1",
+        "text": "I said that we go in and proceed legally."
+      },
+      {
+        "start": 76.78,
+        "end": 79.82,
+        "speaker": "SPEAKER_1",
+        "text": "Now, prior to footness, like I said to your local authorities,"
+      },
+      {
+        "start": 79.82,
+        "end": 81.66,
+        "speaker": "SPEAKER_1",
+        "text": "we did want to contact you."
+      },
+      {
+        "start": 81.66,
+        "end": 84.86,
+        "speaker": "SPEAKER_1",
+        "text": "Get a statement, find out exactly what was going on and"
+      },
+      {
+        "start": 84.86,
+        "end": 87.02,
+        "speaker": "SPEAKER_1",
+        "text": "what your intentions are trying to rectify it."
+      },
+      {
+        "start": 87.02,
+        "end": 89.18,
+        "speaker": "SPEAKER_1",
+        "text": "Now that you are aware of the issue here."
+      },
+      {
+        "start": 89.18,
+        "end": 91.82,
+        "speaker": "SPEAKER_1",
+        "text": "OK, so rectify means what?"
+      },
+      {
+        "start": 91.82,
+        "end": 94.94,
+        "speaker": "SPEAKER_1",
+        "text": "Well, I mean, of course, the whole of the go on"
+      },
+      {
+        "start": 94.94,
+        "end": 97.58,
+        "speaker": "SPEAKER_1",
+        "text": "legal, you know they wanted money."
+      },
+      {
+        "start": 97.58,
+        "end": 100.94,
+        "speaker": "SPEAKER_1",
+        "text": "OK, however you have it, what amount is this?"
+      },
+      {
+        "start": 100.94,
+        "end": 104.78,
+        "speaker": "SPEAKER_1",
+        "text": "You have a balance of $819 in four cents."
+      },
+      {
+        "start": 104.78,
+        "end": 108.06,
+        "speaker": "SPEAKER_1",
+        "text": "OK, at this moment or not, I'm not working."
+      },
+      {
+        "start": 108.06,
+        "end": 110.54,
+        "speaker": "SPEAKER_1",
+        "text": "OK, we'll see what that being said."
+      },
+      {
+        "start": 110.54,
+        "end": 112.14,
+        "speaker": "SPEAKER_1",
+        "text": "I will have no choice but to afford it."
+      },
+      {
+        "start": 112.14,
+        "end": 113.66,
+        "speaker": "SPEAKER_1",
+        "text": "The law is an inch less county."
+      },
+      {
+        "start": 113.66,
+        "end": 115.34,
+        "speaker": "SPEAKER_1",
+        "text": "However, the law is an inch less county."
+      },
+      {
+        "start": 115.34,
+        "end": 117.34,
+        "speaker": "SPEAKER_1",
+        "text": "Will it issue you with a warrant for your arrest?"
+      },
+      {
+        "start": 117.34,
+        "end": 121.98,
+        "speaker": "SPEAKER_1",
+        "text": "It will be for a depository check fraud as well as self-bite deception."
+      },
+      {
+        "start": 121.98,
+        "end": 124.3,
+        "speaker": "SPEAKER_1",
+        "text": "Is there any payments that I can do?"
+      },
+      {
+        "start": 124.38,
+        "end": 128.46,
+        "speaker": "SPEAKER_1",
+        "text": "They will in the such up on a payment arrangement, however they require that you"
+      },
+      {
+        "start": 128.46,
+        "end": 132.14,
+        "speaker": "SPEAKER_1",
+        "text": "come up with a down payment of at least half of your balance."
+      },
+      {
+        "start": 132.14,
+        "end": 134.7,
+        "speaker": "SPEAKER_1",
+        "text": "And then what we'll do is make an arrangement with your own"
+      },
+      {
+        "start": 134.7,
+        "end": 138.94,
+        "speaker": "SPEAKER_1",
+        "text": "the remaining portion of the balance, however that will go ahead and get it"
+      },
+      {
+        "start": 138.94,
+        "end": 140.14,
+        "speaker": "SPEAKER_1",
+        "text": "put a hold."
+      },
+      {
+        "start": 140.14,
+        "end": 143.9,
+        "speaker": "SPEAKER_1",
+        "text": "It will afford all legal actions from being pursued."
+      },
+      {
+        "start": 143.9,
+        "end": 146.78,
+        "speaker": "SPEAKER_1",
+        "text": "OK, so let me do that then because I don't want none of the"
+      },
+      {
+        "start": 147.9,
+        "end": 151.5,
+        "speaker": "SPEAKER_2",
+        "text": "because right now I'm actually pregnant so I can be going through stuff like this."
+      },
+      {
+        "start": 151.58,
+        "end": 152.86,
+        "speaker": "SPEAKER_2",
+        "text": "Right."
+      },
+      {
+        "start": 152.86,
+        "end": 154.86,
+        "speaker": "SPEAKER_2",
+        "text": "Uh, hold for one."
+      },
+      {
+        "start": 154.86,
+        "end": 158.14,
+        "speaker": "SPEAKER_2",
+        "text": "And I'm actually seven, I'm actually eight months,"
+      },
+      {
+        "start": 158.14,
+        "end": 159.34,
+        "speaker": "SPEAKER_2",
+        "text": "they turn eight months next week."
+      },
+      {
+        "start": 159.34,
+        "end": 161.66,
+        "speaker": "SPEAKER_2",
+        "text": "Hold for one more than let me talk with the attorney."
+      },
+      {
+        "start": 161.66,
+        "end": 166.42,
+        "speaker": "SPEAKER_2",
+        "text": "OK, OK."
+      },
+      {
+        "start": 166.42,
+        "end": 167.54,
+        "speaker": "SPEAKER_2",
+        "text": "OK, that's fine."
+      },
+      {
+        "start": 167.54,
+        "end": 174.42,
+        "speaker": "SPEAKER_2",
+        "text": "Go ahead, grab your check information and you let me know what you're ready."
+      },
+      {
+        "start": 174.42,
+        "end": 176.74,
+        "speaker": "SPEAKER_2",
+        "text": "And I have them say you out of letter."
+      },
+      {
+        "start": 176.74,
+        "end": 182.42,
+        "speaker": "SPEAKER_2",
+        "text": "Once you receive that letter you have two hours to contact me back."
+      },
+      {
+        "start": 182.42,
+        "end": 185.7,
+        "speaker": "SPEAKER_2",
+        "text": "And so I do not hear from you with those two hours."
+      },
+      {
+        "start": 185.7,
+        "end": 190.5,
+        "speaker": "SPEAKER_2",
+        "text": "At that time I will take it as a refusal to rectify on a volunteerly basis."
+      },
+      {
+        "start": 190.5,
+        "end": 192.58,
+        "speaker": "SPEAKER_2",
+        "text": "I will go ahead and sign off on it."
+      },
+      {
+        "start": 192.58,
+        "end": 196.18,
+        "speaker": "SPEAKER_2",
+        "text": "The attorney will go ahead and at that time for the Los Angeles County"
+      },
+      {
+        "start": 196.18,
+        "end": 198.26,
+        "speaker": "SPEAKER_2",
+        "text": "for a warrant to be issued for your arrest."
+      },
+      {
+        "start": 198.26,
+        "end": 199.94,
+        "speaker": "SPEAKER_2",
+        "text": "I'm not trying to say that I'm not going to payment."
+      },
+      {
+        "start": 199.94,
+        "end": 200.74,
+        "speaker": "SPEAKER_2",
+        "text": "I'm going to pay."
+      },
+      {
+        "start": 200.74,
+        "end": 201.22,
+        "speaker": "SPEAKER_2",
+        "text": "I'm just a man."
+      },
+      {
+        "start": 201.22,
+        "end": 204.5,
+        "speaker": "SPEAKER_2",
+        "text": "I want to know that I'm going to do this correctly because you don't want it to"
+      },
+      {
+        "start": 204.5,
+        "end": 207.78,
+        "speaker": "SPEAKER_2",
+        "text": "backfire me and then you come and tell me another thing."
+      },
+      {
+        "start": 207.86,
+        "end": 209.86,
+        "speaker": "SPEAKER_2",
+        "text": "It's mailful."
+      },
+      {
+        "start": 209.86,
+        "end": 216.26,
+        "speaker": "SPEAKER_2",
+        "text": "It's debit, credit, or check, whichever way works best for you."
+      },
+      {
+        "start": 216.26,
+        "end": 217.86,
+        "speaker": "SPEAKER_2",
+        "text": "OK, OK."
+      },
+      {
+        "start": 217.86,
+        "end": 220.1,
+        "speaker": "SPEAKER_2",
+        "text": "And good luck to you."
+      }
+    ],
+    "speaker_summaries": {
+      "SPEAKER_1": "This is Chief Investigator Sharon, right at my speaking with ****. Yes. Again, my name is Investigator Sharon Wright. I am investigating a criminal complaint that has been 40 here in the office to get you by **** Cash Express. We are in the process of proceeding to get you legally. Now, prior to footness to your local authorities and return them, it's going to want for your rest. I did want to contact you get a statement and find out exactly what were your intentions. But what is this? I'm not understanding what is this **** Cash Express is stating that you did walk into their facility to obtain a paid-a loan. You did give them your personal check and information along with a data to when they can extract the funds to be paid by for the loan. Once they went to receive the funds, the funds were not available. Now, they did make several attempts to try and contact you to rectify it. They sent you to three different collection agencies. They also made the attempts to try and rectify it. Receive no resolution. So they did transfer your file to my office, I said that we go in and proceed legally. Now, prior to footness, like I said to your local authorities, we did want to contact you. Get a statement, find out exactly what was going on and what your intentions are trying to rectify it. Now that you are aware of the issue here. OK, so rectify means what? Well, I mean, of course, the whole of the go on legal, you know they wanted money. OK, however you have it, what amount is this? You have a balance of $819 in four cents. OK, at this moment or not, I'm not working. OK, we'll see what that being said. I will have no choice but to afford it. The law is an inch less county. However, the law is an inch less county. Will it issue you with a warrant for your arrest? It will be for a depository check fraud as well as self-bite deception. Is there any payments that I can do? They will in the such up on a payment arrangement, however they require that you come up with a down payment of at least half of your balance. And then what we'll do is make an arrangement with your own the remaining portion of the balance, however that will go ahead and get it put a hold. It will afford all legal actions from being pursued. OK, so let me do that then because I don't want none of the",
+      "SPEAKER_2": "because right now I'm actually pregnant so I can be going through stuff like this. Right. Uh, hold for one. And I'm actually seven, I'm actually eight months, they turn eight months next week. Hold for one more than let me talk with the attorney. OK, OK. OK, that's fine. Go ahead, grab your check information and you let me know what you're ready. And I have them say you out of letter. Once you receive that letter you have two hours to contact me back. And so I do not hear from you with those two hours. At that time I will take it as a refusal to rectify on a volunteerly basis. I will go ahead and sign off on it. The attorney will go ahead and at that time for the Los Angeles County for a warrant to be issued for your arrest. I'm not trying to say that I'm not going to payment. I'm going to pay. I'm just a man. I want to know that I'm going to do this correctly because you don't want it to backfire me and then you come and tell me another thing. It's mailful. It's debit, credit, or check, whichever way works best for you. OK, OK. And good luck to you."
+    }
+  },
+  "details": {
+    "features": {
+      "urgency_phrase_count": 0,
+      "otp_credential_mentions": 2,
+      "money_payment_mentions": 2,
+      "authority_impersonation_signals": 3,
+      "off_platform_mentions": 0,
+      "secrecy_mentions": 0,
+      "credential_harvest_signals": 0,
+      "action_request_mentions": 3,
+      "financial_account_mentions": 0,
+      "known_scam_script_hits": 0,
+      "caller_dominance_ratio_speaker1": 0.6542522557112691,
+      "known_scam_phrase_hits": [
+        "bank officer",
+        "legal action",
+        "wire transfer",
+        "you have won"
+      ],
+      "transcript_text": "This is Chief Investigator Sharon, right at my speaking with ****. Yes. Again, my name is Investigator Sharon Wright. I am investigating a criminal complaint that has been 40 here in the office to get you by **** Cash Express. We are in the process of proceeding to get you legally. Now, prior to footness to your local authorities and return them, it's going to want for your rest. I did want to contact you get a statement and find out exactly what were your intentions. But what is this? I'm not understanding what is this **** Cash Express is stating that you did walk into their facility to obtain a paid-a loan. You did give them your personal check and information along with a data to when they can extract the funds to be paid by for the loan. Once they went to receive the funds, the funds were not available. Now, they did make several attempts to try and contact you to rectify it. They sent you to three different collection agencies. They also made the attempts to try and rectify it. Receive no resolution. So they did transfer your file to my office, I said that we go in and proceed legally. Now, prior to footness, like I said to your local authorities, we did want to contact you. Get a statement, find out exactly what was going on and what your intentions are trying to rectify it. Now that you are aware of the issue here. OK, so rectify means what? Well, I mean, of course, the whole of the go on legal, you know they wanted money. OK, however you have it, what amount is this? You have a balance of $819 in four cents. OK, at this moment or not, I'm not working. OK, we'll see what that being said. I will have no choice but to afford it. The law is an inch less county. However, the law is an inch less county. Will it issue you with a warrant for your arrest? It will be for a depository check fraud as well as self-bite deception. Is there any payments that I can do? They will in the such up on a payment arrangement, however they require that you come up with a down payment of at least half of your balance. And then what we'll do is make an arrangement with your own the remaining portion of the balance, however that will go ahead and get it put a hold. It will afford all legal actions from being pursued. OK, so let me do that then because I don't want none of the because right now I'm actually pregnant so I can be going through stuff like this. Right. Uh, hold for one. And I'm actually seven, I'm actually eight months, they turn eight months next week. Hold for one more than let me talk with the attorney. OK, OK. OK, that's fine. Go ahead, grab your check information and you let me know what you're ready. And I have them say you out of letter. Once you receive that letter you have two hours to contact me back. And so I do not hear from you with those two hours. At that time I will take it as a refusal to rectify on a volunteerly basis. I will go ahead and sign off on it. The attorney will go ahead and at that time for the Los Angeles County for a warrant to be issued for your arrest. I'm not trying to say that I'm not going to payment. I'm going to pay. I'm just a man. I want to know that I'm going to do this correctly because you don't want it to backfire me and then you come and tell me another thing. It's mailful. It's debit, credit, or check, whichever way works best for you. OK, OK. And good luck to you."
+    },
+    "original_score": 100.0,
+    "advanced_analysis": {
+      "risk_score": 68.0,
+      "risk_level": "HIGH",
+      "confidence": 0.4,
+      "matches": [
+        {
+          "keyword": "right now",
+          "category": "URGENCY",
+          "weight": 15
+        },
+        {
+          "keyword": "legal action",
+          "category": "URGENCY",
+          "weight": 25
+        }
+      ],
+      "context_analysis": {
+        "urgency_count": 1,
+        "financial_count": 3,
+        "authority_count": 1,
+        "multiplier": 1.7
+      }
+    }
+  }
+}

@@ -58,4 +58,30 @@ python watch_audio_folder.py
 Notes:
 - `.wav` is recommended.
 - `.mp3` requires `ffmpeg` in PATH.
-- You must have an offline STT backend installed (e.g., `faster-whisper` / `whisper` / `vosk` + local model).
+- You must have an offline STT backend installed (e.g., `faster-whisper` / `openai-whisper` / `vosk` + local model).
+
+### Install Whisper (pip) and use it
+
+Install dependencies:
+
+```bash
+python -m pip install -r requirements.txt
+```
+
+Install `ffmpeg` (required for `.mp3`):
+- Windows: install ffmpeg and ensure `ffmpeg` is on PATH
+
+Run with pip Whisper backend:
+
+```bash
+set SCAM_SHIELD_STT_BACKEND=whisper
+python main.py
+```
+
+If language auto-detect is wrong, force Hindi/Tamil/Malayalam/Telugu:
+
+```bash
+set SCAM_SHIELD_STT_BACKEND=whisper
+set SCAM_SHIELD_LANGUAGE=hi
+python main.py
+```

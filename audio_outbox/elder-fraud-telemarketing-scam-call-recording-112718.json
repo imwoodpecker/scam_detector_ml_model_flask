@@ -1,127 +1,212 @@
 {
-  "risk_score": 100.0,
-  "risk_level": "CRITICAL",
+  "risk_score": 79,
+  "risk_level": "HIGH",
+  "transcript_quality": {
+    "quality_score": 0.9755102040816327,
+    "quality_level": "HIGH",
+    "is_sufficient_for_scoring": true,
+    "explanation": "Transcript appears coherent",
+    "metrics": {
+      "token_count": 245,
+      "segment_count": 24,
+      "avg_segment_duration": 3.16,
+      "short_token_ratio": 0.1469387755102041,
+      "has_meaningful_content": true,
+      "repetition_score": 0.08163265306122448,
+      "gibberish_score": 0.0
+    },
+    "recommendation": "PROCEED"
+  },
+  "audio_quality": {
+    "original": {
+      "duration_seconds": 78.168,
+      "silence_percentage": 41.73191075631972,
+      "snr_estimate_db": 29.821571350097656,
+      "sample_rate": 16000
+    },
+    "processed": {
+      "duration_seconds": 78.168,
+      "silence_percentage": 40.115200593593286,
+      "snr_estimate_db": 34.32076747256957,
+      "sample_rate": 16000
+    },
+    "preprocessing_applied": [
+      "high_pass_filter",
+      "noise_reduction",
+      "loudness_normalization"
+    ]
+  },
+  "stt_backend": {
+    "backend": "faster_whisper",
+    "model": "tiny",
+    "language": "en",
+    "language_probability": 0.9388207197189331
+  },
   "flags": [
+    "ADVANCED_FINANCIAL",
+    "ADVANCED_URGENCY",
     "AUTHORITY_IMPERSONATION",
     "CREDENTIAL_HARVESTING",
     "CREDENTIAL_OTP",
     "FALSE_POSITIVE_SUPPRESSION"
   ],
-  "summary": "Caller requested sensitive financial credentials (codes/card/account details). Caller appears to impersonate a bank, card network, or fraud/security department. Transcript matches known scam script patterns. Final risk: high (100/100).",
+  "summary": "Caller requested sensitive financial credentials (codes/card/account details). Caller appears to impersonate a bank, card network, or fraud/security department. Transcript matches known scam script patterns. One speaker dominates the conversation while requesting sensitive information. Final risk: high (100/100).",
+  "language": {
+    "detected": "en",
+    "detected_name": "Unknown",
+    "supported": false,
+    "confidence": 0.9388207197189331
+  },
   "transcript": {
     "segments": [
       {
-        "start": 0.0,
-        "end": 2.0,
+        "start": 0.72,
+        "end": 6.42,
         "speaker": "SPEAKER_1",
-        "text": "Hello"
+        "text": "Yeah, this is the system, and this is the same thing that you'll call it, you know, from"
       },
       {
-        "start": 2.3000000000000003,
-        "end": 4.3,
+        "start": 6.42,
+        "end": 10.22,
         "speaker": "SPEAKER_1",
-        "text": "Yeah, this is Lewis"
+        "text": "obstacles, fraud, watch the vision, it's very the security of your visa, mass security"
       },
       {
-        "start": 4.3,
-        "end": 8.08,
+        "start": 10.22,
+        "end": 11.22,
         "speaker": "SPEAKER_1",
-        "text": "This is Sammy Daniel calling you from off-coast fraud watch divisions"
+        "text": "counts."
       },
       {
-        "start": 8.08,
-        "end": 13.22,
+        "start": 11.22,
+        "end": 15.3,
         "speaker": "SPEAKER_1",
-        "text": "You're in the security of your visa mastercard accounts due to the increase in computer related frauds"
+        "text": "Due to the increased computer-related frauds, we made some very important changes for"
       },
       {
-        "start": 13.22,
-        "end": 17.92,
+        "start": 15.3,
+        "end": 18.22,
         "speaker": "SPEAKER_1",
-        "text": "We've made some very important changes for our policies, and I just want to beat you on the changes"
+        "text": "our policies, and I just want to beat you on the changes, but..."
       },
       {
-        "start": 18.400000000000002,
-        "end": 20.400000000000002,
+        "start": 18.22,
+        "end": 20.56,
         "speaker": "SPEAKER_1",
-        "text": "Okay, all right. Oh one second"
+        "text": "Oh, I'm sorry."
       },
       {
-        "start": 21.240000000000002,
-        "end": 27.0,
+        "start": 20.56,
+        "end": 26.06,
+        "speaker": "SPEAKER_1",
+        "text": "It's standard procedures that we're telling all the customers that, now that, because of"
+      },
+      {
+        "start": 26.06,
+        "end": 31.56,
+        "speaker": "SPEAKER_1",
+        "text": "computer-related frauds, the card holders are held responsible to the mass security"
+      },
+      {
+        "start": 31.56,
+        "end": 32.56,
+        "speaker": "SPEAKER_1",
+        "text": "of the visa."
+      },
+      {
+        "start": 32.56,
+        "end": 36.06,
+        "speaker": "SPEAKER_1",
+        "text": "So, right now, what we're doing is we're providing protection, so we're right now we"
+      },
+      {
+        "start": 36.06,
+        "end": 40.56,
+        "speaker": "SPEAKER_1",
+        "text": "under everything that's any extra fraud charge on your credit card, we underrated right"
+      },
+      {
+        "start": 40.56,
+        "end": 41.56,
+        "speaker": "SPEAKER_1",
+        "text": "away."
+      },
+      {
+        "start": 41.56,
+        "end": 45.56,
+        "speaker": "SPEAKER_1",
+        "text": "You also have received even a package in about 7 to 10 days from, oh, okay."
+      },
+      {
+        "start": 45.56,
+        "end": 46.56,
+        "speaker": "SPEAKER_1",
+        "text": "Yeah, you've pierced."
+      },
+      {
+        "start": 46.56,
+        "end": 50.56,
+        "speaker": "SPEAKER_1",
+        "text": "And in this package, you'll find stickers, and also a registration form, a registration"
+      },
+      {
+        "start": 50.56,
+        "end": 51.56,
+        "speaker": "SPEAKER_1",
+        "text": "form."
+      },
+      {
+        "start": 51.56,
+        "end": 56.56,
+        "speaker": "SPEAKER_1",
+        "text": "You write down all your account numbers, telephone cards, department store cards, any"
+      },
+      {
+        "start": 56.56,
+        "end": 60.56,
+        "speaker": "SPEAKER_1",
+        "text": "other cards, okay, that you have also, that we can protect all of them."
+      },
+      {
+        "start": 61.56,
+        "end": 64.56,
         "speaker": "SPEAKER_2",
-        "text": "Standard procedure that we're telling all the customers that now that because of computer related frauds"
+        "text": "That's there, we'll be giving you our new security code, okay?"
       },
       {
-        "start": 27.4,
-        "end": 31.88,
+        "start": 64.56,
+        "end": 65.56,
         "speaker": "SPEAKER_2",
-        "text": "Called the card holders are held responsible to the mastercard and visa"
+        "text": "All right?"
       },
       {
-        "start": 32.4,
-        "end": 36.96,
+        "start": 65.56,
+        "end": 68.56,
         "speaker": "SPEAKER_2",
-        "text": "So right now what we're doing is we're providing protection. So right now we underwrite everything"
+        "text": "Now, in order for me to give your security code, I just need to ensure that you are"
       },
       {
-        "start": 36.96,
-        "end": 40.88,
+        "start": 68.56,
+        "end": 72.56,
         "speaker": "SPEAKER_2",
-        "text": "That's any extra fraud charge on your credit card. We underwrite it right away"
+        "text": "the right, you know, authorized card holder, so I think you can just confirm your card"
       },
       {
-        "start": 40.88,
-        "end": 45.879999999999995,
+        "start": 72.56,
+        "end": 74.56,
         "speaker": "SPEAKER_2",
-        "text": "You'll also be receiving a package in about seven to ten days. Oh, okay via UPS"
+        "text": "with me, okay?"
       },
       {
-        "start": 45.879999999999995,
-        "end": 51.260000000000005,
+        "start": 74.56,
+        "end": 77.56,
         "speaker": "SPEAKER_2",
-        "text": "Yeah, and in this package you'll find stickers and also a registration form on this registration form"
-      },
-      {
-        "start": 51.400000000000006,
-        "end": 53.400000000000006,
-        "speaker": "SPEAKER_2",
-        "text": "You write down all your account numbers"
-      },
-      {
-        "start": 54.28,
-        "end": 58.32,
-        "speaker": "SPEAKER_1",
-        "text": "Telephone cards the department store cards any other cards, okay that you have a console"
-      },
-      {
-        "start": 58.32,
-        "end": 63.32,
-        "speaker": "SPEAKER_1",
-        "text": "Oh, yeah, that we can protect all of them now today. I will be giving you a new security code"
-      },
-      {
-        "start": 63.64,
-        "end": 67.03999999999999,
-        "speaker": "SPEAKER_1",
-        "text": "Okay, all right now in order for me to give you a security code"
-      },
-      {
-        "start": 67.03999999999999,
-        "end": 71.0,
-        "speaker": "SPEAKER_1",
-        "text": "I just need to ensure that you are the right, you know authorized card holder"
-      },
-      {
-        "start": 71.0,
-        "end": 77.08,
-        "speaker": "SPEAKER_1",
-        "text": "So if you can just confirm your card with me, okay, all right, which card are you gonna be using your visa your mastercard?"
+        "text": "Which card are you going to be using your visa, your mass security?"
       }
     ],
     "speaker_summaries": {
-      "SPEAKER_1": "Hello Yeah, this is Lewis This is Sammy Daniel calling you from off-coast fraud watch divisions You're in the security of your visa mastercard accounts due to the increase in computer related frauds We've made some very important changes for our policies, and I just want to beat you on the changes Okay, all right. Oh one second Telephone cards the department store cards any other cards, okay that you have a console Oh, yeah, that we can protect all of them now today. I will be giving you a new security code Okay, all right now in order for me to give you a security code I just need to ensure that you are the right, you know authorized card holder So if you can just confirm your card with me, okay, all right, which card are you gonna be using your visa your mastercard?",
-      "SPEAKER_2": "Standard procedure that we're telling all the customers that now that because of computer related frauds Called the card holders are held responsible to the mastercard and visa So right now what we're doing is we're providing protection. So right now we underwrite everything That's any extra fraud charge on your credit card. We underwrite it right away You'll also be receiving a package in about seven to ten days. Oh, okay via UPS Yeah, and in this package you'll find stickers and also a registration form on this registration form You write down all your account numbers"
+      "SPEAKER_1": "Yeah, this is the system, and this is the same thing that you'll call it, you know, from obstacles, fraud, watch the vision, it's very the security of your visa, mass security counts. Due to the increased computer-related frauds, we made some very important changes for our policies, and I just want to beat you on the changes, but... Oh, I'm sorry. It's standard procedures that we're telling all the customers that, now that, because of computer-related frauds, the card holders are held responsible to the mass security of the visa. So, right now, what we're doing is we're providing protection, so we're right now we under everything that's any extra fraud charge on your credit card, we underrated right away. You also have received even a package in about 7 to 10 days from, oh, okay. Yeah, you've pierced. And in this package, you'll find stickers, and also a registration form, a registration form. You write down all your account numbers, telephone cards, department store cards, any other cards, okay, that you have also, that we can protect all of them.",
+      "SPEAKER_2": "That's there, we'll be giving you our new security code, okay? All right? Now, in order for me to give your security code, I just need to ensure that you are the right, you know, authorized card holder, so I think you can just confirm your card with me, okay? Which card are you going to be using your visa, your mass security?"
     }
   },
   "details": {
@@ -133,210 +218,40 @@
       "off_platform_mentions": 0,
       "secrecy_mentions": 0,
       "credential_harvest_signals": 6,
-      "action_request_mentions": 3,
+      "action_request_mentions": 4,
       "financial_account_mentions": 2,
-      "known_scam_script_hits": 3,
-      "caller_dominance_ratio_speaker1": 0.5751366120218578,
+      "known_scam_script_hits": 2,
+      "caller_dominance_ratio_speaker1": 0.7890295358649789,
       "known_scam_phrase_hits": [
         "card holders are held responsible",
-        "due to increase in computer related fraud",
-        "we underwrite all fraud charges"
+        "customer care",
+        "due to increase in computer related fraud"
       ],
-      "transcript_text": "Hello Yeah, this is Lewis This is Sammy Daniel calling you from off-coast fraud watch divisions You're in the security of your visa mastercard accounts due to the increase in computer related frauds We've made some very important changes for our policies, and I just want to beat you on the changes Okay, all right. Oh one second Standard procedure that we're telling all the customers that now that because of computer related frauds Called the card holders are held responsible to the mastercard and visa So right now what we're doing is we're providing protection. So right now we underwrite everything That's any extra fraud charge on your credit card. We underwrite it right away You'll also be receiving a package in about seven to ten days. Oh, okay via UPS Yeah, and in this package you'll find stickers and also a registration form on this registration form You write down all your account numbers Telephone cards the department store cards any other cards, okay that you have a console Oh, yeah, that we can protect all of them now today. I will be giving you a new security code Okay, all right now in order for me to give you a security code I just need to ensure that you are the right, you know authorized card holder So if you can just confirm your card with me, okay, all right, which card are you gonna be using your visa your mastercard?"
+      "transcript_text": "Yeah, this is the system, and this is the same thing that you'll call it, you know, from obstacles, fraud, watch the vision, it's very the security of your visa, mass security counts. Due to the increased computer-related frauds, we made some very important changes for our policies, and I just want to beat you on the changes, but... Oh, I'm sorry. It's standard procedures that we're telling all the customers that, now that, because of computer-related frauds, the card holders are held responsible to the mass security of the visa. So, right now, what we're doing is we're providing protection, so we're right now we under everything that's any extra fraud charge on your credit card, we underrated right away. You also have received even a package in about 7 to 10 days from, oh, okay. Yeah, you've pierced. And in this package, you'll find stickers, and also a registration form, a registration form. You write down all your account numbers, telephone cards, department store cards, any other cards, okay, that you have also, that we can protect all of them. That's there, we'll be giving you our new security code, okay? All right? Now, in order for me to give your security code, I just need to ensure that you are the right, you know, authorized card holder, so I think you can just confirm your card with me, okay? Which card are you going to be using your visa, your mass security?"
     },
-    "final_report": {
-      "risk_score": 100,
-      "risk_level": "high",
-      "signals": [
-        "AUTHORITY_IMPERSONATION",
-        "CREDENTIAL_HARVESTING",
-        "CREDENTIAL_OTP",
-        "FALSE_POSITIVE_SUPPRESSION"
-      ],
-      "trace": [
+    "original_score": 100.0,
+    "advanced_analysis": {
+      "risk_score": 48.0,
+      "risk_level": "MEDIUM",
+      "confidence": 0.4,
+      "matches": [
         {
-          "chunk_index": 3,
-          "change": 11,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 11
+          "keyword": "security code",
+          "category": "FINANCIAL",
+          "weight": 25
         },
         {
-          "chunk_index": 4,
-          "change": 8,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 8
-        },
-        {
-          "chunk_index": 5,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 6,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 7,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 8,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 9,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 10,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 11,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 12,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 13,
-          "change": 21,
-          "rule_id": "CREDENTIAL_HARVESTING",
-          "why": "Requests for card/account numbers are high-risk credential harvesting.",
-          "contributed": 21
-        },
-        {
-          "chunk_index": 13,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 14,
-          "change": 16,
-          "rule_id": "CREDENTIAL_HARVESTING",
-          "why": "Requests for card/account numbers are high-risk credential harvesting.",
-          "contributed": 16
-        },
-        {
-          "chunk_index": 14,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 15,
-          "change": 21,
-          "rule_id": "CREDENTIAL_OTP",
-          "why": "OTP/credential solicitation is a high-confidence scam intent.",
-          "contributed": 21
-        },
-        {
-          "chunk_index": 15,
-          "change": 3,
-          "rule_id": "CREDENTIAL_HARVESTING",
-          "why": "Requests for card/account numbers are high-risk credential harvesting.",
-          "contributed": 3
-        },
-        {
-          "chunk_index": 15,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 16,
-          "change": 16,
-          "rule_id": "CREDENTIAL_OTP",
-          "why": "OTP/credential solicitation is a high-confidence scam intent.",
-          "contributed": 16
-        },
-        {
-          "chunk_index": 16,
-          "change": 3,
-          "rule_id": "CREDENTIAL_HARVESTING",
-          "why": "Requests for card/account numbers are high-risk credential harvesting.",
-          "contributed": 3
-        },
-        {
-          "chunk_index": 16,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 17,
-          "change": 3,
-          "rule_id": "CREDENTIAL_OTP",
-          "why": "OTP/credential solicitation is a high-confidence scam intent.",
-          "contributed": 3
-        },
-        {
-          "chunk_index": 17,
-          "change": 3,
-          "rule_id": "CREDENTIAL_HARVESTING",
-          "why": "Requests for card/account numbers are high-risk credential harvesting.",
-          "contributed": 3
-        },
-        {
-          "chunk_index": 17,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
-        },
-        {
-          "chunk_index": 18,
-          "change": 3,
-          "rule_id": "CREDENTIAL_OTP",
-          "why": "OTP/credential solicitation is a high-confidence scam intent.",
-          "contributed": 3
-        },
-        {
-          "chunk_index": 18,
-          "change": 3,
-          "rule_id": "CREDENTIAL_HARVESTING",
-          "why": "Requests for card/account numbers are high-risk credential harvesting.",
-          "contributed": 3
-        },
-        {
-          "chunk_index": 18,
-          "change": 2,
-          "rule_id": "AUTHORITY_IMPERSONATION",
-          "why": "Authority/support impersonation elevates risk.",
-          "contributed": 2
+          "keyword": "right now",
+          "category": "URGENCY",
+          "weight": 15
         }
-      ]
+      ],
+      "context_analysis": {
+        "urgency_count": 1,
+        "financial_count": 2,
+        "authority_count": 0,
+        "multiplier": 1.2
+      }
     }
   }
 }

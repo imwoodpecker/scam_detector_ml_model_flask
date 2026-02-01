@@ -1,73 +1,53 @@
 """
 audio_listener.py
 
-Platform-agnostic audio capture interface.
-
-PC testing:
-- We provide a TextChunkSource that simulates "audio->stt" by reading stdin lines.
-
-Android migration:
-- Replace the implementation with AudioRecord-based capture feeding the same ChunkSink.
+Audio file listener for real-time processing.
 """
 
 from __future__ import annotations
 
-from dataclasses import dataclass
-from typing import Iterable, Protocol
+import os
+import time
+from typing import Callable
 
+class AudioFileListener:
+    """Listen for new audio files in a directory."""
+    
+    def __init__(self, watch_dir: str = "audio_inbox"):
+        self.watch_dir = watch_dir
+        self.processed_files = set()
+        self.running = False
+    
+    def start_listening(self, callback: Callable[[str], None]) -> None:
+        """Start listening for new audio files."""
+        self.running = True
+        print(f"Listening for audio files in: {self.watch_dir}")
+        
+        while self.running:
+            try:
+                if os.path.exists(self.watch_dir):
+                    for filename in os.listdir(self.watch_dir):
+                        if self._is_audio_file(filename):
+                            filepath = os.path.join(self.watch_dir, filename)
+                            if filepath not in self.processed_files:
+                                print(f"New audio file detected: {filename}")
+                                callback(filepath)
+                                self.processed_files.add(filepath)
+                
+                time.sleep(1)  # Check every second
+                
+            except KeyboardInterrupt:
+                print("\nStopping audio listener...")
+                self.running = False
+                break
+    
+    def _is_audio_file(self, filename: str) -> bool:
+        """Check if file is an audio file."""
+        return filename.lower().endswith(('.mp3', '.wav', '.m4a', '.flac'))
 
-@dataclass(frozen=True)
-class AudioFrame:
-    """
-    Raw audio frame (PCM bytes) plus monotonically increasing timestamps.
-
-    We do NOT use wall-clock time; we use sample-index derived time so it's deterministic
-    and testable (and doesn't leak real timestamps).
-    """
-
-    t0_ms: int
-    t1_ms: int
-    pcm16le: bytes
-    sample_rate_hz: int
-    channels: int
-
-
-@dataclass(frozen=True)
-class TextChunk:
-    """
-    Output of STT for a short time window (1–3 seconds).
-    """
-
-    t0_ms: int
-    t1_ms: int
-    text: str
-    stt_tier: str  # "high" | "medium" | "low" | "partial"
-
-
-class ChunkSink(Protocol):
-    def on_chunk(self, chunk: TextChunk) -> None: ...
-
-    def on_end(self) -> None: ...
-
-
-class TextChunkSource:
-    """
-    PC test harness: treat each input line as a "chunk" with deterministic timestamps.
-    This lets you test the full pipeline (engine + HUD) without mic/STT dependencies.
-    """
-
-    def __init__(self, *, chunk_ms: int = 2000) -> None:
-        self._chunk_ms = chunk_ms
-        self._t_ms = 0
-
-    def iter_chunks_from_lines(self, lines: Iterable[str]) -> Iterable[TextChunk]:
-        for line in lines:
-            text = (line or "").strip()
-            if not text:
-                continue
-            t0 = self._t_ms
-            t1 = self._t_ms + self._chunk_ms
-            self._t_ms = t1
-            # For PC simulation we mark as "high". Real STT will compute tier deterministically.
-            yield TextChunk(t0_ms=t0, t1_ms=t1, text=text, stt_tier="high")
-
+if __name__ == "__main__":
+    def test_callback(filepath: str):
+        print(f"Processing: {filepath}")
+    
+    listener = AudioFileListener()
+    listener.start_listening(test_callback)
