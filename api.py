@@ -7,11 +7,15 @@ import uuid
 
 from scam_detector import ScamDetector
 
-API_KEY = "scam-api-12345"   # change this in production
+
+for folder in ["temp_audio", "audio_inbox", "audio_outbox", "data"]:
+    os.makedirs(folder, exist_ok=True)
+
+API_KEY = os.getenv("API_KEY") 
 UPLOAD_DIR = "temp_audio"
 
-
-os.makedirs(UPLOAD_DIR, exist_ok=True)
+if not API_KEY:
+    raise RuntimeError("API_KEY not set")
 
 
 app = FastAPI(
