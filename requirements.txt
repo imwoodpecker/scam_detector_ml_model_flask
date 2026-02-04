@@ -8,3 +8,4 @@ scipy
 soundfile
 scikit-learn
 pandas
+uvicorn[standard]
