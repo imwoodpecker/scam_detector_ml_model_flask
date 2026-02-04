@@ -9,3 +9,4 @@ soundfile
 scikit-learn
 pandas
 uvicorn[standard]
+fastapi
