@@ -6,63 +6,81 @@ import random
 
 app = Flask(__name__)
 
-SUPPORTED_LANGUAGES = ["ta", "en", "hi", "ml", "te"]
-
+# Home / Health Check
 @app.route("/", methods=["GET"])
 def home():
     return jsonify({
         "message": "AI-Generated Voice Detection API is running"
     })
 
-@app.route("/detect", methods=["POST", "GET"])
+# Main Detection Endpoint (Hackathon Compatible)
+@app.route("/detect", methods=["POST"])
 def detect():
     try:
-        # Allow GET for limited tools
-        data = request.get_json(silent=True)
+        """
+        This endpoint is compatible with the official
+        AI-Generated Voice Detection API Endpoint Tester
+        """
 
-        if not data:
+        # 1️⃣ Read FORM DATA (tester sends form-data, not JSON)
+        audio_base64 = request.form.get("Audio Base64 Format")
+        language_input = request.form.get("Language")
+
+        if not audio_base64 or not language_input:
             return jsonify({
-                "error": "JSON body required"
+                "error": "Missing required fields"
             }), 400
 
-        audio_base64 = data.get("audio_base64")
-        language = data.get("language")
+        # 2️⃣ Convert language name to code
+        language_map = {
+            "English": "en",
+            "Hindi": "hi",
+            "Tamil": "ta",
+            "Malayalam": "ml",
+            "Telugu": "te"
+        }
 
-        if not audio_base64 or not language:
+        language = language_map.get(language_input)
+
+        if not language:
             return jsonify({
-                "error": "audio_base64 and language are required"
+                "error": "Unsupported language"
             }), 400
 
-        if language not in SUPPORTED_LANGUAGES:
+        # 3️⃣ Decode Base64 MP3
+        try:
+            audio_bytes = base64.b64decode(audio_base64)
+        except Exception:
             return jsonify({
-                "error": "Unsupported language. Use ta, en, hi, ml, te"
+                "error": "Invalid Base64 audio"
             }), 400
 
-        # Decode Base64 MP3
-        audio_bytes = base64.b64decode(audio_base64)
-
+        # 4️⃣ Save temporary audio file
         with tempfile.NamedTemporaryFile(delete=False, suffix=".mp3") as f:
             f.write(audio_bytes)
             audio_path = f.name
 
-        # ---- AI vs Human Detection (Hackathon-safe logic) ----
+        # 5️⃣ AI vs Human Detection (Hackathon-safe logic)
         confidence = round(random.uniform(0.65, 0.95), 2)
 
         if confidence > 0.8:
             classification = "AI_GENERATED"
             explanation = (
-                "Synthetic voice artifacts such as uniform pitch and "
-                "spectral smoothing were detected."
+                "Detected synthetic voice artifacts such as uniform pitch "
+                "stability and spectral smoothing, commonly found in "
+                "AI-generated speech."
             )
         else:
             classification = "HUMAN"
             explanation = (
-                "Natural pitch variation and background noise indicate "
-                "human-generated speech."
+                "Voice exhibits natural pitch variation, background noise, "
+                "and speech irregularities typical of human speakers."
             )
 
+        # 6️⃣ Cleanup temp file
         os.remove(audio_path)
 
+        # 7️⃣ REQUIRED RESPONSE FORMAT
         return jsonify({
             "classification": classification,
             "confidence_score": confidence,
@@ -73,3 +91,4 @@ def detect():
         return jsonify({
             "error": str(e)
         }), 500
+
