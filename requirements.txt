@@ -10,3 +10,4 @@ scikit-learn
 pandas
 flask
 gunicorn
+requests
