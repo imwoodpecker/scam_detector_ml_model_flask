@@ -8,5 +8,5 @@ scipy
 soundfile
 scikit-learn
 pandas
-uvicorn[standard]
-fastapi
+flask
+gunicorn
