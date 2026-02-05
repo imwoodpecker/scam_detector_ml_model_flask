@@ -14,7 +14,7 @@ def home():
     })
 
 # Main Detection Endpoint (Hackathon Compatible)
-@app.route("/detect", methods=["POST"])
+@app.route("/detect", methods=["POST", "GET"])
 def detect():
     try:
         """
